@@ -1,0 +1,232 @@
+main.login {
+  background: url("../images/login.svg") no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.login .card__login {
+  width: 450px;
+  max-width: 450px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+main.login .card__login-title {
+  color: #2B4084;
+  text-align: center;
+}
+main.login .card__login-socials {
+  display: flex;
+  gap: 20px;
+}
+main.login .card__login-socials button {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+main.login .card__login-socials button:hover {
+  transform: translateY(-3px);
+}
+main.login .card__login-socials button.card__login-socials--facebook {
+  background: #216AD1;
+  color: white;
+}
+main.login .card__login-socials button.card__login-socials--google {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #9FAAAC;
+  color: #9FAAAC;
+}
+main.login .card__login-sp {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.login .card__login-sp span {
+  background: white;
+  position: absolute;
+  padding: 0 2rem;
+  color: #9FAAAC;
+  font-size: 0.9rem;
+}
+main.login .card__login-sp::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  z-index: 0;
+}
+main.login .card__login-sp::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #9FAAAC;
+  z-index: 0;
+}
+main.login .card__login-save {
+  background: #36BFF4;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+main.login .card__login-save:hover {
+  transform: translateY(-3px);
+}
+main.login .card__login a.not__account {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #9FAAAC;
+}
+main.login .card__login a.not__account strong {
+  margin-left: 6px;
+  color: #36BFF4;
+}
+main.login .visibility {
+  position: absolute;
+  right: 10px;
+  top: 29px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+main.login footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+main.login footer .save__session {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+}
+main.login footer a {
+  color: #36BFF4;
+  font-size: 0.8rem;
+  display: inline-flex;
+  font-weight: bold;
+}
+
+/* Input */
+.input__text {
+  display: flex;
+  position: relative;
+  height: 75px;
+  width: 100%;
+  align-items: center;
+}
+
+.input__text-textarea .input__text-label {
+  top: 0px;
+}
+
+.input__text-textarea .input__text-input {
+  padding: 10px;
+  margin-top: 1em;
+  white-space: wrap;
+  resize: auto;
+  overflow: auto;
+  height: 100px;
+  word-wrap: break-word;
+}
+
+.input__text.input__text-textarea .input__text-input:valid + .input__text-label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  background-color: red;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.input__text-input {
+  height: 55px;
+  width: inherit;
+  caret-color: #F2F3F4;
+  padding: 0 16px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 0.5px;
+  border: none;
+  float: left;
+  transition: border-color 200ms;
+  background: #F2F3F4;
+}
+
+.input__text-input:hover {
+  border-color: #F2F3F4;
+}
+
+.input__text-input:valid {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.input__text-input:valid + .input__text-label {
+  top: 12px;
+  left: 10px;
+  font-size: 12px;
+  background-color: #F2F3F4;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #87878A;
+}
+
+.input__text-input:focus {
+  padding-left: 16px;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.input__text-input:focus + .input__text-label {
+  top: 12px;
+  left: 10px;
+  font-size: 12px;
+  color: #9FAAAC;
+  background-color: #F2F3F4;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.input__text-textarea .input__text-input:focus + .input__text-label {
+  top: -12px;
+  left: 10px;
+  font-size: 12px;
+  color: #3737b3;
+  background-color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.input__text-label {
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 27px;
+  font-size: 14px;
+  color: #666666;
+  transition: all 300ms;
+}
+
+/*# sourceMappingURL=main.css.map */

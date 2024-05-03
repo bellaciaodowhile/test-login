@@ -1,0 +1,248 @@
+$blue-dark: #2B4084;
+$blue-light: #36BFF4;
+$facebook: #216AD1;
+$google: #9FAAAC;
+$input: #F2F3F4;
+$color-input: #87878A;
+main.login {
+    background: url('../images/login.svg') no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card__login {
+        width: 450px;
+        max-width: 450px;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+
+        &-title {
+            color: $blue-dark;
+            text-align: center;
+        }
+
+        &-socials {
+            display: flex;
+            gap: 20px;
+
+            button {
+                flex-grow: 1;
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                transition: all 300ms ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                &:hover {
+                    transform: translateY(-3px);
+                }
+
+                &.card__login-socials--facebook {
+                    background: $facebook;
+                    color: white;
+                }
+
+                &.card__login-socials--google {
+                    background: #0000;
+                    border: 1px solid $google;
+                    color: $google;
+                }
+            }
+        }
+
+        &-sp {
+            position: relative;
+            text-align: center;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                background: white;
+                position: absolute;
+                padding: 0 2rem;
+                color: $google;
+                font-size: .9rem;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 100%;
+                z-index: 0;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background: $google;
+                z-index: 0;
+            }
+        }
+        &-save {
+            background: $blue-light;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 1.5rem;
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+        a.not__account {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: .9rem;
+            color: $google;
+            strong {
+                margin-left: 6px;
+                color: $blue-light;
+            }
+        }
+    }
+    .visibility {
+        position: absolute;
+        right: 10px;
+        top: 29px;
+        cursor: pointer;
+        font-size: .9rem;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        .save__session {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: .7rem;
+        }
+        a {
+            color: $blue-light;
+            font-size: .8rem;
+            display: inline-flex;
+            font-weight: bold;
+        }
+
+    }
+   
+}
+
+/* Input */
+.input__text {
+    display: flex;
+    position: relative;
+    height: 75px;
+    width: 100%;
+    align-items: center;
+}
+
+.input__text-textarea .input__text-label {
+    top: 0px;
+}
+
+.input__text-textarea .input__text-input {
+    padding: 10px;
+    margin-top: 1em;
+    white-space: wrap;
+    resize: auto;
+    overflow: auto;
+    height: 100px;
+    word-wrap: break-word;
+}
+
+.input__text.input__text-textarea .input__text-input:valid+.input__text-label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    background-color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input__text-input {
+    height: 55px;
+    width: inherit;
+    caret-color: $input;
+    padding: 0 16px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    border: none;
+    float: left;
+    transition: border-color 200ms;
+    background: $input;
+}
+
+.input__text-input:hover {
+    border-color: $input;
+}
+
+.input__text-input:valid {
+    border-color: #0000;
+}
+
+.input__text-input:valid+.input__text-label {
+    top: 12px;
+    left: 10px;
+    font-size: 12px;
+    background-color: $input;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: $color-input;
+}
+
+.input__text-input:focus {
+    padding-left: 16px;
+    border-width: 2px;
+    border-color: #0000;
+    outline: none;
+}
+
+.input__text-input:focus+.input__text-label {
+    top: 12px;
+    left: 10px;
+    font-size: 12px;
+    color: $google;
+    background-color: $input;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input__text-textarea .input__text-input:focus+.input__text-label {
+    top: -12px;
+    left: 10px;
+    font-size: 12px;
+    color: #3737b3;
+    background-color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input__text-label {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 27px;
+    font-size: 14px;
+    color: #666666;
+    transition: all 300ms;
+}
