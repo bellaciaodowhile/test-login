@@ -34,6 +34,9 @@ main.login .card__login-socials button {
   justify-content: center;
   gap: 10px;
 }
+main.login .card__login-socials button span {
+  text-wrap: nowrap;
+}
 main.login .card__login-socials button:hover {
   transform: translateY(-3px);
 }

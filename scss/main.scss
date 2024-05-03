@@ -40,6 +40,9 @@ main.login {
                 align-items: center;
                 justify-content: center;
                 gap: 10px;
+                span {
+                    text-wrap: nowrap;
+                }
                 &:hover {
                     transform: translateY(-3px);
                 }
