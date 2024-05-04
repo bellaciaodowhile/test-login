@@ -4,8 +4,9 @@ $facebook: #216AD1;
 $google: #9FAAAC;
 $input: #F2F3F4;
 $color-input: #87878A;
+
 main.login {
-    background: url('../images/login.svg') no-repeat;
+    background: url('../images/login.webp') no-repeat;
     background-size: cover;
     background-position: top;
     height: 100vh;
@@ -14,12 +15,14 @@ main.login {
     justify-content: center;
 
     .card__login {
-        width: 450px;
-        max-width: 450px;
+        width: 500px;
+        max-width: 500px;
         background: white;
         padding: 25px;
         border-radius: 10px;
-
+        @media only screen and (max-width: 370px) {
+            padding: 25px 10px;
+        }
         &-title {
             color: $blue-dark;
             text-align: center;
@@ -29,6 +32,9 @@ main.login {
             display: flex;
             gap: 20px;
 
+            @media only screen and (max-width: 540px) {
+                flex-direction: column;
+            }
             button {
                 flex-grow: 1;
                 padding: 10px;
@@ -42,6 +48,7 @@ main.login {
                 gap: 10px;
                 span {
                     text-wrap: nowrap;
+                    font-size: 14px;
                 }
                 &:hover {
                     transform: translateY(-3px);
@@ -132,6 +139,11 @@ main.login {
         justify-content: space-between;
         align-items: center;
         margin-top: 1rem;
+        @media only screen and (max-width: 370px) {
+            align-items: start;
+            flex-direction: column;
+            gap: 15px;
+        }
         .save__session {
             display: flex;
             align-items: center;

@@ -1,5 +1,5 @@
 main.login {
-  background: url("../images/login.svg") no-repeat;
+  background: url("../images/login.webp") no-repeat;
   background-size: cover;
   background-position: top;
   height: 100vh;
@@ -8,11 +8,16 @@ main.login {
   justify-content: center;
 }
 main.login .card__login {
-  width: 450px;
-  max-width: 450px;
+  width: 500px;
+  max-width: 500px;
   background: white;
   padding: 25px;
   border-radius: 10px;
+}
+@media only screen and (max-width: 370px) {
+  main.login .card__login {
+    padding: 25px 10px;
+  }
 }
 main.login .card__login-title {
   color: #2B4084;
@@ -21,6 +26,11 @@ main.login .card__login-title {
 main.login .card__login-socials {
   display: flex;
   gap: 20px;
+}
+@media only screen and (max-width: 540px) {
+  main.login .card__login-socials {
+    flex-direction: column;
+  }
 }
 main.login .card__login-socials button {
   flex-grow: 1;
@@ -36,6 +46,7 @@ main.login .card__login-socials button {
 }
 main.login .card__login-socials button span {
   text-wrap: nowrap;
+  font-size: 14px;
 }
 main.login .card__login-socials button:hover {
   transform: translateY(-3px);
@@ -117,6 +128,13 @@ main.login footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+}
+@media only screen and (max-width: 370px) {
+  main.login footer {
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 main.login footer .save__session {
   display: flex;
