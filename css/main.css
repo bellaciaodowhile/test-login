@@ -116,6 +116,14 @@ main.login .card__login a.not__account strong {
   margin-left: 6px;
   color: #36BFF4;
 }
+@media only screen and (max-width: 370px) {
+  main.login .card__login a.not__account {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+}
 main.login .visibility {
   position: absolute;
   right: 10px;
