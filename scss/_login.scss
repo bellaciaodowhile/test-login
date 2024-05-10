@@ -1,0 +1,160 @@
+main.login {
+    background: url('../images/login.webp') no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card__login {
+        width: 550px;
+        max-width: 550px;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        @media only screen and (max-width: 370px) {
+            padding: 25px 10px;
+        }
+        &-title {
+            color: $blue-dark;
+            text-align: center;
+        }
+
+        &-socials {
+            display: flex;
+            gap: 20px;
+
+            @media only screen and (max-width: 540px) {
+                flex-direction: column;
+            }
+            button {
+                flex-grow: 1;
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                transition: all 300ms ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                span {
+                    text-wrap: nowrap;
+                    font-size: 14px;
+                }
+                &:hover {
+                    transform: translateY(-3px);
+                }
+
+                &.card__login-socials--facebook {
+                    background: $facebook;
+                    color: white;
+                }
+
+                &.card__login-socials--google {
+                    background: #0000;
+                    border: 1px solid $google;
+                    color: $google;
+                }
+            }
+        }
+
+        &-sp {
+            position: relative;
+            text-align: center;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                background: white;
+                position: absolute;
+                padding: 0 2rem;
+                color: $google;
+                font-size: .9rem;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: 100%;
+                z-index: 0;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background: $google;
+                z-index: 0;
+            }
+        }
+        &-save {
+            background: $blue-light;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 1.5rem;
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+        a.not__account {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: .9rem;
+            color: $google;
+            strong {
+                margin-left: 6px;
+                color: $blue-light;
+            }
+            @media only screen and (max-width: 370px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 30px;
+            }
+        }
+    }
+    .visibility {
+        position: absolute;
+        right: 10px;
+        top: 29px;
+        cursor: pointer;
+        font-size: .9rem;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        @media only screen and (max-width: 370px) {
+            align-items: start;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .save__session {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: .7rem;
+        }
+        a {
+            color: $blue-light;
+            font-size: .8rem;
+            display: inline-flex;
+            font-weight: bold;
+        }
+
+    }
+}

@@ -530,12 +530,12 @@ header {
   background: #293e87;
   padding: 1rem 4vw;
 
-  & h1 {
-    color: white;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-  }
+  
+}
+.hero-titulo h2 {
+  text-align: center;
+  width: 100%;
+  color: white;
 }
 /* breadcrumb */
 .breadcrumb-item {

@@ -1,0 +1,67 @@
+.alert__buskadent {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 1.2rem;
+    z-index: 10;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 360px;
+    max-width: 300px;
+    animation: $fadeInRight;
+    font-size: 1rem;
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 10px;
+        color: white;
+        align-self: flex-start;
+        font-size: .5rem;
+    }
+    &--success {
+        border: 1px solid $success;
+        background: $success-bg;
+        .alert__buskadent-icon {
+            background: $success;
+        }
+    }
+    &--warning {
+        border: 1px solid $warning;
+        background: lighten($color: $warning, $amount: 40);
+        .alert__buskadent-icon {
+            background: $warning;
+        }
+    }
+    &--error {
+        border: 1px solid $error;
+        background: lighten($color: $error, $amount: 40);
+        .alert__buskadent-icon {
+            background: $error;
+        }
+    }
+    &--remove {
+        animation: $hideFadeLeft;
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        color: $blue-dark;
+        strong {
+            text-transform: capitalize;
+        }
+    }
+
+    &-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: $google;
+    }
+}

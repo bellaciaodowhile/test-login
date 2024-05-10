@@ -1,0 +1,195 @@
+.content__main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 3rem 9rem 3rem;
+
+    &-form {
+        width: 1200px;
+        max-width: 1500px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 0 48px -17px #00000026;
+
+        &-step {
+            display: none;
+
+            &--current {
+                display: block;
+                animation: $fadeIn;
+            }
+        }
+
+        &__steps {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 5px;
+            padding-bottom: 2rem;
+
+            &-step {
+                position: relative;
+                display: flex;
+                flex-grow: 1;
+                align-items: center;
+                gap: 5px;
+
+                span {
+                    background: #fff;
+                    padding: 0px;
+                    word-wrap: break-word;
+                    font-size: .88rem;
+                }
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                    border: 2px solid $google;
+                    margin-right: 5px;
+                }
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    flex-grow: 1;
+                    height: 1px;
+                    border-bottom: 2px solid $google;
+                }
+
+                &--current {
+                    font-weight: $semibold;
+
+                    &::before {
+                        width: 20px;
+                        height: 20px;
+                        border: 5px solid $blue-light;
+                    }
+
+                    &::after {
+                        border-bottom: 3px dashed $blue-light;
+                    }
+                }
+
+                i {
+                    display: none;
+                    color: #fff;
+                }
+
+                &--done {
+                    font-weight: normal;
+
+                    &::before {
+                        width: 20px;
+                        height: 20px;
+                        border: 5px solid $green;
+                        background: $green;
+                    }
+
+                    &::after {
+                        border-bottom: 3px solid $green;
+                    }
+
+                    i {
+                        display: block;
+                        position: absolute;
+                        color: #fff;
+                        top: 15px;
+                        left: 3px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        &__sp {
+            border: 1px solid $hr;
+            margin-bottom: 1.5rem;
+        }
+
+        &__title {
+            font-size: 1rem;
+            color: $title-section;
+            font-weight: $semibold;
+            margin-bottom: 1.5rem;
+        }
+
+        &__grid-3 {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 1.5rem;
+        }
+
+        &__grid-2 {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 1.5rem;
+        }
+
+        &__label {
+            span {
+                font-size: 12px;
+                font-weight: 500;
+                display: block;
+                margin-bottom: .7rem;
+            }
+        }
+    }
+
+    &-buttons__fixed {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 3rem;
+        box-shadow: 0 -6px 26px #00000026;
+        z-index: 2;
+
+        button {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+            font-weight: $semibold;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+
+        &-right {
+            display: flex;
+            gap: 15px;
+
+            button:nth-child(1) {
+                background: #0000;
+                color: $green-light;
+                display: none;
+
+                &.buttons__fixed-prev--active {
+                    display: block;
+                    animation: $fadeInUp;
+                }
+            }
+
+            button:nth-child(2) {
+                background: $green-light;
+                color: #fff;
+            }
+        }
+
+        &-left {
+            button {
+                background: #0000;
+                color: $blue-button;
+            }
+        }
+    }
+}
