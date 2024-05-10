@@ -30,6 +30,11 @@ $fadeInLeft: 300ms fadeInLeft ease-in-out forwards;
 $fadeInRight: 300ms fadeInRight ease-in-out forwards;
 $hideFadeLeft: 300ms hideFadeLeft ease-in-out forwards;
 
+%hoverEffect {
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
 @import 'animations';
 @import 'alerts';
 @import 'inputs';

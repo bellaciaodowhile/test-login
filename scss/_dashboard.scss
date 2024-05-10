@@ -1,5 +1,5 @@
 .dashboard {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
 
     &__content {
         display: flex;
@@ -16,12 +16,17 @@
             &__profile {
                 display: flex;
                 align-items: center;
-                gap: 5px;
+                gap: 12px;
 
                 img {
                     border-radius: 8px;
                     width: 60px;
                 }
+
+                span {
+                    font-weight: 600;
+                }
+
             }
 
             &__menu {
@@ -32,7 +37,8 @@
                     list-style: none;
 
                     a {
-                        padding: 10px;
+                        padding: 11px 15px;
+                        margin-bottom: 5px;
                         border-radius: 8px;
                         color: $google;
                         font-size: 1rem;
@@ -62,6 +68,55 @@
                             filter: brightness(0) saturate(100%) invert(24%) sepia(44%) saturate(1015%) hue-rotate(190deg) brightness(95%) contrast(97%);
                         }
                     }
+                }
+            }
+        }
+
+        &-main {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+    }
+}
+
+.table__buskadent {
+    width: 100%;
+
+    // background: red;
+    thead {
+        width: 100%;
+        background: $blue-light;
+        border-radius: 4px;
+        display: table-header-group;
+
+        tr {
+            position: relative;
+            i {
+                position: absolute;
+                top: 0;
+                left: 5px;
+            }
+            td {
+                font-size: .8rem;
+                color: white;
+                padding: 10px 35px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $hr;
+            td {
+                font-size: .78rem;
+                padding: 10px 35px;
+
+                &.details {
+                    color: $blue-light;
+                    font-weight: 500;
+                    cursor: pointer;
                 }
             }
         }

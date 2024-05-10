@@ -1,3 +1,7 @@
+.btn__buskadent:hover {
+  transform: translateY(-3px);
+}
+
 @keyframes fadeInUp {
   from {
     transform: translateY(30px);
@@ -611,13 +615,14 @@ main.login footer a {
 .btn__buskadent {
   border: none;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   color: white;
   background: #3463F2;
   text-align: center;
   font-size: 1rem;
   border-radius: 8px;
   transition: all 300ms ease-in-out;
+  font-weight: 500;
 }
 
 .upload {
@@ -909,7 +914,7 @@ main.login footer a {
 }
 
 .dashboard {
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
 }
 .dashboard__content {
   display: flex;
@@ -926,11 +931,14 @@ main.login footer a {
 .dashboard__content-sidebar__profile {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 12px;
 }
 .dashboard__content-sidebar__profile img {
   border-radius: 8px;
   width: 60px;
+}
+.dashboard__content-sidebar__profile span {
+  font-weight: 600;
 }
 .dashboard__content-sidebar__menu {
   padding: 0;
@@ -940,7 +948,8 @@ main.login footer a {
   list-style: none;
 }
 .dashboard__content-sidebar__menu-item a {
-  padding: 10px;
+  padding: 11px 15px;
+  margin-bottom: 5px;
   border-radius: 8px;
   color: #9FAAAC;
   font-size: 1rem;
@@ -963,6 +972,47 @@ main.login footer a {
 }
 .dashboard__content-sidebar__menu-item--active img {
   filter: brightness(0) saturate(100%) invert(24%) sepia(44%) saturate(1015%) hue-rotate(190deg) brightness(95%) contrast(97%);
+}
+.dashboard__content-main {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.table__buskadent {
+  width: 100%;
+}
+.table__buskadent thead {
+  width: 100%;
+  background: #36BFF4;
+  border-radius: 4px;
+  display: table-header-group;
+}
+.table__buskadent thead tr {
+  position: relative;
+}
+.table__buskadent thead tr i {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+.table__buskadent thead tr td {
+  font-size: 0.8rem;
+  color: white;
+  padding: 10px 35px;
+}
+.table__buskadent tbody tr {
+  border-bottom: 1px solid #F2F3F4;
+}
+.table__buskadent tbody tr td {
+  font-size: 0.78rem;
+  padding: 10px 35px;
+}
+.table__buskadent tbody tr td.details {
+  color: #36BFF4;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 button {

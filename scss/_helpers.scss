@@ -77,12 +77,13 @@
 .btn__buskadent {
     border: none;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     color: white;
     background: $upload-mini;
     text-align: center;
     font-size: 1rem;
     border-radius: 8px;
     transition: $trs;
-    
+    font-weight: 500;
+    @extend %hoverEffect;
 }
