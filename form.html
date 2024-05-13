@@ -365,7 +365,7 @@
                 </article>
                 <div class="add__contacts"></div>
             </section>
-            <section class="content__main-form-step content__main-form-step--current" step="2">
+            <section class="content__main-form-step" step="2">
                 <h4 class="content__main-form__title">Historia clínica</h4>
                 <div class="input__text">
                     <input class="input__text-input" name="reason_for_consultation" type="text" required
@@ -912,12 +912,15 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="specific_diet">
+                        <!-- <div class="input__text data__boolean" data-boolean="specific_diet">
                             <input class="input__text-input" name="specific_diet_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, especifíca
                                 qué tipo de dieta sigues y porqué:</span>
-                        </div>
+                        </div> -->
+                        <textarea class="input__textarea data__boolean" data-boolean="specific_diet" name="specific_diet_description" placeholder="Si la respuesta es sí, especifica qué tipo de dieta sigues y por qué:"></textarea>
+
+
                     </div>
                     <div class="content__main-form__label">
                         <span>¿Comes fuera de casa con frecuencia?</span>
@@ -935,12 +938,13 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="out_of_home">
+                        <!-- <div class="input__text data__boolean" data-boolean="out_of_home">
                             <input class="input__text-input" name="out_of_home_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, ¿Qué tipos de
                                 alimentos sueles consumir cuando comes fuera de casa?</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="out_of_home" name="out_of_home_description" placeholder="Si la respuesta es sí, ¿Qué tipo de alimentos sueles consumir cuando comes fuera de casa?"></textarea>
                     </div>
                     <div class="content__main-form__label">
                         <span>¿Tienes en cuenta el tamaño de las porciones al comer?</span>
@@ -958,12 +962,13 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="portion_sizes">
+                        <!-- <div class="input__text data__boolean" data-boolean="portion_sizes">
                             <input class="input__text-input" name="portion_sizes_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, ¿Cómo
                                 controlas el tamaño de las porciones?</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="portion_sizes" name="portion_sizes_description" placeholder="Si la respuesta es sí, ¿Cómo controlas el tamaño de las porciones?"></textarea>
                     </div>
                 </div>
                 <hr class="content__main-form__sp">
@@ -1081,7 +1086,7 @@
                     </div>
                 </div>
             </section>
-            <section class="content__main-form-step content__main-form-step--current" step="3">
+            <section class="content__main-form-step" step="3">
                 <h4 class="content__main-form__title">Antecedentes familiares</h4>
                 <div class="content__main-form__grid-3">
                     <div>
@@ -1110,12 +1115,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="record_family">
+                        <!-- <div class="input__text data__boolean" data-boolean="record_family">
                             <input class="input__text-input" name="record_family_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, especifíca la
                                 enfermedad...</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="record_family" name="record_family_description" placeholder="Si la respuesta es sí, especifica la enfermedad y el familiar afectado (padre, madre, hermanos, abuelos, etc.)."></textarea>
                     </div>
                     <div class="content__main-form__label">
                         <span>¿Alguien en tu familia cercana padece o ha padecido enfermedades crónicas como asma,
@@ -1173,12 +1179,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_3">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_3">
                             <input class="input__text-input" name="antecedent_3_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona el
                                 tipo de cáncer y el familiar afectado.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_3" name="antecedent_3_description" placeholder="Si la respuesta es sí, menciona el tipo de cáncer y el familiar afectado."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1208,12 +1215,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_4">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_4">
                             <input class="input__text-input" name="antecedent_4_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, especifica la
                                 enfermedad y el familiar afectado.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_4" name="antecedent_4_description" placeholder="Si la respuesta es sí, especifica la enfermedad y el familiar afectado."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1243,12 +1251,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_5">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_5">
                             <input class="input__text-input" name="antecedent_5_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, proporciona
                                 detalles adicionales.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_5" name="antecedent_5_description" placeholder="Si la respuesta es sí, proporciona detalles adicionales."></textarea>
                     </div>
                 </div>
                 <hr class="content__main-form__sp">
@@ -1275,12 +1284,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_6">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_6">
                             <input class="input__text-input" name="antecedent_6_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, proporciona
                                 detalles adicionales.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_6" name="antecedent_6_description" placeholder="Si la respuesta es sí, especifica la enfermedad o afección y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1302,12 +1312,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_7">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_7">
                             <input class="input__text-input" name="antecedent_7_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona la
                                 cirugía y proporciona detalles relevantes.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_7" name="antecedent_7_description" placeholder="Si la respuesta es sí, menciona la cirugía y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1329,12 +1340,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_8">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_8">
                             <input class="input__text-input" name="antecedent_8_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, especifica la
                                 razón de la hospitalización y proporciona detalles relevantes.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_8" name="antecedent_8_description" placeholder="Si la respuesta es sí, especifica la razón de la hospitalización y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1356,12 +1368,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_9">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_9">
                             <input class="input__text-input" name="antecedent_9_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 alergias y proporciona detalles relevantes.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_9" name="antecedent_9_description" placeholder="Si la respuesta es sí, menciona las alergias y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1383,12 +1396,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_10">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_10">
                             <input class="input__text-input" name="antecedent_10_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, indica la
                                 cantidad promedio de cigarrillos que fumas al día y la duración del hábito.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_10" name="antecedent_10_description" placeholder="Si la respuesta es sí, indica la cantidad promedio de cigarrillos que fumas al día y la duración del hábito."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1410,12 +1424,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_11">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_11">
                             <input class="input__text-input" name="antecedent_11_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_11" name="antecedent_11_description" placeholder="Si la respuesta es sí, menciona los métodos o tratamientos utilizados."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1437,12 +1452,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_12">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_12">
                             <input class="input__text-input" name="antecedent_12_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_12" name="antecedent_12_description" placeholder="Si la respuesta es sí, indica la frecuencia y la cantidad promedio de consumo por ocasión."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1464,12 +1480,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_13">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_13">
                             <input class="input__text-input" name="antecedent_13_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="antecedent_13" name="antecedent_13_description" placeholder="Si la respuesta es sí, especifica los problemas experimentados (dependencia, problemas de salud, problemas legales, etc.) y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1492,12 +1509,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_14">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_14">
                             <input class="input__text-input" name="antecedent_14_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="antecedent_14" name="antecedent_14_description" placeholder="Si la respuesta es sí, menciona las sustancias consumidas y proporciona detalles sobre el patrón de consumo y la duración."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1519,12 +1537,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_15">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_15">
                             <input class="input__text-input" name="antecedent_15_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="antecedent_15" name="antecedent_15_description" placeholder="Si la respuesta es sí, menciona los medicamentos y la razón del tratamiento."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1546,16 +1565,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="antecedent_16">
+                        <!-- <div class="input__text data__boolean" data-boolean="antecedent_16">
                             <input class="input__text-input" name="antecedent_16_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="antecedent_16" name="antecedent_16_description" placeholder="Si la respuesta es sí, especifica los medicamentos y proporciona detalles relevantes."></textarea>
                     </div>
                 </div>
             </section>
-            <section class="content__main-form-step content__main-form-step--current" step="4">
+            <section class="content__main-form-step" step="4">
                 <h4 class="content__main-form__title">Padecimientos sistémicos</h4>
                 <div class="content__main-form__grid-3">
                     <div>
@@ -1579,13 +1599,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_1">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_1">
                             <input class="input__text-input" name="symptoms_1_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="symptoms_1" name="symptoms_1_description" placeholder="Si la respuesta es sí, menciona las enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el tratamiento actual."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1607,13 +1628,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_2">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_2">
                             <input class="input__text-input" name="symptoms_2_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="symptoms_2" name="symptoms_2_description" placeholder="Si la respuesta es sí, menciona los trastornos y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1635,13 +1657,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_3">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_3">
                             <input class="input__text-input" name="symptoms_3_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="symptoms_3" name="symptoms_3_description" placeholder="Si la respuesta es sí, menciona las enfermedades y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1663,13 +1686,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_4">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_4">
                             <input class="input__text-input" name="symptoms_4_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="symptoms_4" name="symptoms_4_description" placeholder="Si la respuesta es sí, menciona los problemas dentales y proporciona detalles relevantes, como el tratamiento recibido."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1690,13 +1714,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_5">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_5">
                             <input class="input__text-input" name="symptoms_5_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="symptoms_5" name="symptoms_5_description" placeholder="Si la respuesta es sí, menciona el número de dientes extraídos y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1718,13 +1743,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_6">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_6">
                             <input class="input__text-input" name="symptoms_6_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="symptoms_6" name="symptoms_6_description" placeholder="Si la respuesta es sí, menciona el tipo de tratamiento y la duración del mismo."></textarea>
                     </div>
                     <div class="content__main-form__label">
                         <span>¿Utilizas prótesis dentales, como dentaduras postizas, puentes o implantes
@@ -1769,13 +1795,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_8">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_8">
                             <input class="input__text-input" name="symptoms_8_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="symptoms_8" name="symptoms_8_description" placeholder="Si la respuesta es no, proporciona detalles sobre tus hábitos de higiene."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1797,13 +1824,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_9">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_9">
                             <input class="input__text-input" name="symptoms_9_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="symptoms_9" name="symptoms_9_description" placeholder="Si la respuesta es sí, menciona el número de embarazos y proporciona detalles relevantes sobre ellos."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1825,21 +1853,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input__text data__boolean" data-boolean="symptoms_10">
+                        <!-- <div class="input__text data__boolean" data-boolean="symptoms_10">
                             <input class="input__text-input" name="symptoms_10_description" type="text" required
                                 autocomplete="off">
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona las
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
-                        </div>
+                        </div> -->
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="symptoms_10" name="symptoms_10_description" placeholder="Si la respuesta es sí, menciona el número de hijos y proporciona detalles relevantes."></textarea>
                     </div>
                 </div>
 
             </section>
-            <section class="content__main-form-step content__main-form-step--current" step="5">
+            <section class="content__main-form-step" step="5">
                 <h4 class="content__main-form__title">Exámenes y diagnóticos complementarios</h4>
-
-
                 <article class="upload">
                     <section class="upload__info">
                         <img class="upload__info-icon" src="./images/upload.svg">
@@ -1855,11 +1882,7 @@
                     <section class="upload__files"></section>
 
                 </article>
-                <div class="input__text">
-                    <input class="input__text-input" name="complementary_studies" type="text" required
-                        autocomplete="off">
-                    <span class="input__text-label input__text-label--wrap">Completario.</span>
-                </div>
+                <textarea name="complementary_studies" rows="4" class="input__textarea" placeholder="Interpretación y comentarios sobre los estudios complementarios"></textarea>
                 <hr class="content__main-form__sp">
                 <h4 class="content__main-form__title">Firma del paciente</h4>
                 <div class="content__main-form__label">

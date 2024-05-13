@@ -8,11 +8,26 @@
     border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    column-gap: 10px;
     min-width: 360px;
     max-width: 300px;
     animation: $fadeInRight;
     font-size: 1rem;
+    transition: $trs;
+    &--fixed {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+        border-radius: 12px;
+        padding: 1rem;
+        .alert__buskadent-icon {
+            padding: 3px;
+            font-size: 1.2rem;
+        }
+    }
     &-icon {
         display: flex;
         align-items: center;
@@ -44,8 +59,26 @@
             background: $error;
         }
     }
+    &--info {
+        border: 1px solid $blue-button;
+        background: $uploading-bg;
+        .alert__buskadent-icon {
+            background: $blue-button;
+        }
+    }
     &--remove {
         animation: $hideFadeLeft;
+    }
+    &--expand {
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        transition: $trs;
+        &-content {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
     }
 
     &-text {
@@ -54,6 +87,19 @@
         color: $blue-dark;
         strong {
             text-transform: capitalize;
+            font-weight: 600;
+        }
+        &--info {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            a {
+                font-size: .8rem;
+                color: $blue-button;
+                cursor: pointer;
+                font-weight: bold;
+            }
         }
     }
 
@@ -63,5 +109,53 @@
         right: 10px;
         cursor: pointer;
         color: $google;
+    }
+    &--trigger {
+        cursor: pointer;
+    }
+    &--content {
+        overflow: hidden;
+        height: 0px;
+        visibility: hidden;
+        opacity: 0;
+        animation: $fadeIn;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 0;
+        transition: $trs;
+        &-item {
+            padding: 10px 10px 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            border-bottom: 1px solid $hr;
+            color: $color-text-radio;
+            font-size: .8rem;
+            span {
+                display: block;
+                font-weight: 500;
+            }
+            a {
+                color: $blue-button;
+                font-weight: 600;
+                display: inline-block;
+            }
+            &:nth-child(1) {
+                border-radius: 12px 12px 0 0;
+                margin-top: 1rem;
+            }
+            &:last-child {
+                border-radius: 0 0 12px 12px;
+                border-color: #0000;
+            }
+        }
+        &--active {
+            // display: block;
+            visibility: visible;
+            opacity: 1;
+            height: 100%;
+        }
     }
 }

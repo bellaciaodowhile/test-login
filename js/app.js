@@ -113,7 +113,7 @@ if (form != null) {
     nextStep.onclick = function (e) {
         e.preventDefault();
 
-
+        console.log('next')
         // * Steps
         // * -- Step 1
         const inputsStep1 = inputsStep(1);
@@ -148,14 +148,21 @@ if (form != null) {
 
         const emptyStep1 = emptyFields(inputsStep1);
         if (emptyStep1) {
-            console.log('Se requiere llenar todos los campos')
+            alertBuskadent({
+                type: 'error',
+                title: 'Error',
+                description: 'Se requieren llenar todos los campos'
+            });
         } else {
             next();
-            alert('Puedes pasar al paso 2')
-            console.log(dataStep1)
+            console.log('Puedes seguir al paso 2')
+            // alert('Puedes pasar al paso 2')
+            // console.log(dataStep1)
         }
 
         // * -- Step 2
+
+
 
     }
 
@@ -253,9 +260,9 @@ if (uploads != null) {
 
         inputFile.addEventListener('change', function () {
             const files = this.files;
-            // const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
-            const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/x-matroska', 'video/mp4'];
-            const maxSize = 10 * 1024 * 1024 * 1024;
+            const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
+            // const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf', 'video/x-matroska', 'video/mp4'];
+            const maxSize = 10 * 1024 * 1024;
             const listFiles = document.querySelector('.upload__files');
 
             for (let i = 0; i < files.length; i++) {
@@ -272,6 +279,8 @@ if (uploads != null) {
                     const xhr = new XMLHttpRequest();
                     xhr.open('POST', '', true);
 
+                    let fileCreate = document.createElement('div');
+                    fileCreate.id = 'file' + i;
                     xhr.upload.onprogress = function (event) {
                         if (event.lengthComputable) {
                             const percentComplete = (event.loaded / event.total) * 100;
@@ -284,7 +293,9 @@ if (uploads != null) {
                             if (type.includes('PEG')) type = 'JPG';
 
                             if (percentComplete != 100) {
-                                listFiles.innerHTML = `
+                                listFiles.appendChild(fileCreate);
+                                // console.log(listFiles.querySelector('#file' + i))
+                                listFiles.querySelector('#file' + i).innerHTML = `
                                 <article id="${file.name}" style="--uploading: ${percentComplete}%" class="upload__files-item upload__files-item--uploading">
                                     <div class="upload__files-content">
                                         <span class="upload__files-item__title">${name}.${type}</span>
@@ -359,6 +370,7 @@ if (uploadsMini != null) {
         }
     });
 }
+
 // * Alert
 function alertBuskadent({
     type,
@@ -368,6 +380,8 @@ function alertBuskadent({
     const alert = document.createElement('div');
     alert.classList.add('alert__buskadent', `alert__buskadent--${type}`)
     if (type == 'success') type = 'done';
+    if (type == 'error') type = 'error_outline';
+    if (type == 'warning') type = 'warning_amber';
     alert.innerHTML = `<i class="material-icons-outlined alert__buskadent-icon">${type}</i>
     <div class="alert__buskadent-text">
         <strong>${title}</strong>
@@ -377,7 +391,10 @@ function alertBuskadent({
     document.body.appendChild(alert);
     const close = alert.querySelector('.alert__buskadent-close');
     console.log(close)
-    close.onclick = (e) => hiddenAlert();
+    close.onclick = (e) => {
+        alert.classList.add('alert__buskadent--remove');
+        setTimeout(() => { alert.remove(); }, 300)
+    };
     removeAlert();
 
     function hiddenAlert() {
@@ -395,6 +412,56 @@ function alertBuskadent({
     }
 }
 
+// * Alerts Trigger 
+const alertsBuskadentTrigger = [...document.querySelectorAll('.alert__buskadent')];
+if (alertsBuskadentTrigger != null) {
+    alertsBuskadentTrigger.map(alertBuska => {
+        let content = alertBuska.querySelector('.alert__buskadent--content');
+        let trigger = alertBuska.querySelector('.alert__buskadent--trigger');
+
+        trigger.onclick = (e) => {
+            e.preventDefault();
+            if (content.classList.contains('alert__buskadent--content--active')) {
+                trigger.children[0].textContent = 'expand_more';
+                content.classList.remove('alert__buskadent--content--active');
+            } else {
+                trigger.children[0].textContent = 'expand_less';
+                content.classList.add('alert__buskadent--content--active');
+            }
+        }
+    });
+}
+
+// * Order By
+const orderBys = [...document.querySelectorAll('.order__by')];
+if (orderBys != null) {
+    orderBys.map(orderBy => {
+        let trigger = orderBy.querySelector('.order__by-current');
+        let content = orderBy.querySelector('.order__by-content');
+        let items = [...orderBy.querySelectorAll('.order__by-content-item')];
+        let currentItem = orderBy.querySelector('.order__by-current span span');
+        console.log(currentItem)
+        trigger.onclick = (e) => {
+            e.preventDefault();
+            if (content.classList.contains('order__by-content--active')) {
+                content.classList.remove('order__by-content--active');
+            } else {
+                content.classList.add('order__by-content--active');
+            }
+        };
+        items.map(item => {
+            item.onclick = (e) => {
+                e.preventDefault();
+                items.map(x => x.classList.remove('order__by-content-item--active'));
+                currentItem.textContent = item.textContent.trim();
+                console.log(item.textContent.trim())
+                item.classList.add('order__by-content-item--active');
+                content.classList.remove('order__by-content--active');
+            };
+        });
+    });
+}
+
 if (document.querySelector('.dashboard') != null) {
     alertBuskadent({
         type: 'success',
@@ -407,4 +474,22 @@ if (document.querySelector('.dashboard') != null) {
         title: 'Sesión iniciada',
         description: 'Sesión iniciada con éxito.'
     });
+}
+
+// * Textarea
+
+const textareaInputs = [...document.querySelectorAll('textarea')];
+if (textareaInputs != null) {
+
+    textareaInputs.map(x => {
+        x.oninput = () => {
+            adjustTextareaHeight(x);
+        };
+    });
+
+    function adjustTextareaHeight(textarea) {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+    }
+
 }

@@ -87,3 +87,6 @@
     font-weight: 500;
     @extend %hoverEffect;
 }
+.text__initial {
+    text-transform: initial !important;
+}
