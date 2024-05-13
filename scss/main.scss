@@ -46,6 +46,7 @@ $hideFadeLeft: 300ms hideFadeLeft ease-in-out forwards;
 @import 'dashboard';
 button {
     font-size: .75rem;
+    outline: none;
 }
 small {
     font-size: .8rem !important;
@@ -53,5 +54,5 @@ small {
     font-weight: normal;
     display: block;
     margin-bottom: 2rem;
-    margin-top: -4px;
+    margin-top: -20px;
 }

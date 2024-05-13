@@ -1,4 +1,11 @@
 console.log('App JS')
+// TODO
+/* TODO
+- Me hace falta colocar el sitio en responsive y los detalles del buscador de la tabla de historias clinicas. Tambien me hace falta arreglar los textareas con su alto correspondiente tomando en cuenta que los upfile le hacen falta los detalles del dropbox OJO apurate
+
+
+
+*/
 const visibility = document.querySelector('.visibility');
 if (visibility != null) {
     visibility.onclick = function (e) {
@@ -114,56 +121,96 @@ if (form != null) {
         e.preventDefault();
 
         console.log('next')
+        next();
         // * Steps
         // * -- Step 1
-        const inputsStep1 = inputsStep(1);
-        const contactsArray = [];
-        const dataStep1 = {};
+        // const inputsStep1 = inputsStep(1);
+        // const contactsArray = [];
+        // const dataStep1 = {};
 
-        let relationshipValue = inputsStep1.filter(x => {
-            if (x.getAttribute('name').startsWith('relationship1')) {
-                return x.value.trim();
-            }
-        });
-        inputsStep1.forEach(input => {
-            if (input.getAttribute('name').startsWith('name_contact')) {
-                const contactObj = {
-                    contact: input.value,
-                    relationship: relationshipValue
-                };
-                if (input.getAttribute('name').startsWith('relationship')) {
-                    contactObj.relationship = input.value;
-                }
-                contactsArray.push(contactObj);
-            } else if (input.getAttribute('name').startsWith('relationship')) {
-                relationshipValue = input.value;
-            } else if (input.type === 'radio' && input.checked) {
-                dataStep1[input.getAttribute('name')] = input.value;
-            } else {
-                dataStep1[input.getAttribute('name')] = input.value;
-            }
-        });
+        // let relationshipValue = inputsStep1.filter(x => {
+        //     if (x.getAttribute('name').startsWith('relationship1')) {
+        //         return x.value.trim();
+        //     }
+        // });
+        // inputsStep1.forEach(input => {
+        //     if (input.getAttribute('name').startsWith('name_contact')) {
+        //         const contactObj = {
+        //             contact: input.value,
+        //             relationship: relationshipValue
+        //         };
+        //         if (input.getAttribute('name').startsWith('relationship')) {
+        //             contactObj.relationship = input.value;
+        //         }
+        //         contactsArray.push(contactObj);
+        //     } else if (input.getAttribute('name').startsWith('relationship')) {
+        //         relationshipValue = input.value;
+        //     } else if (input.type === 'radio' && input.checked) {
+        //         dataStep1[input.getAttribute('name')] = input.value;
+        //     } else {
+        //         dataStep1[input.getAttribute('name')] = input.value;
+        //     }
+        // });
 
-        dataStep1['contacts'] = contactsArray;
+        // dataStep1['contacts'] = contactsArray;
 
-        const emptyStep1 = emptyFields(inputsStep1);
-        if (emptyStep1) {
-            alertBuskadent({
-                type: 'error',
-                title: 'Error',
-                description: 'Se requieren llenar todos los campos'
-            });
-        } else {
-            next();
-            console.log('Puedes seguir al paso 2')
-            // alert('Puedes pasar al paso 2')
-            // console.log(dataStep1)
-        }
+        // const emptyStep1 = emptyFields(inputsStep1);
+        // if (emptyStep1) {
+        //     alertBuskadent({
+        //         type: 'warning',
+        //         title: 'Faltan campos por llenar',
+        //         description: 'Se requieren llenar todos los campos'
+        //     });
+        // } else {
+        //     next();
+        //     console.log('Puedes seguir al paso 2')
+        //     // alert('Puedes pasar al paso 2')
+        //     // console.log(dataStep1)
+        // }
 
         // * -- Step 2
 
+        // const inputsStep2 = document.querySelectorAll('section.content__main-form-step[step="2"] input, section.content__main-form-step[step="2"] textarea');
+        // console.log(inputsStep2)
+        // const dataStep2 = {};
+        // const emptyFieldsStep2 = [];
+
+        // inputsStep2.forEach(input => {
+        //     const name = input.getAttribute('name');
+        //     const value = input.value.trim();
+
+        //     if (value === '') {
+        //         emptyFieldsStep2.push(name);
+        //     }
+
+        //     if (input.type === 'radio' && input.checked) {
+        //         dataStep2[name] = input.value;
+        //     } else {
+        //         dataStep2[name] = value;
+        //     }
+        // });
+
+        // if (emptyFieldsStep2.length > 0) {
+        //     alertBuskadent({
+        //         type: 'warning',
+        //         title: 'Faltan campos por llenar',
+        //         description: 'Se requieren llenar todos los campos'
+        //     });
+        // } else {
+        //     next();
+        //     console.log('Puedes seguir al paso 3');
+        //     // Aquí puedes hacer lo que necesites con los datos recopilados en dataStep2
+        //     console.log(dataStep2);
+        // }
 
 
+
+
+
+    }
+
+    prevStep.onclick = function (e) {
+        prev();
     }
 
     // * Helpers
@@ -176,7 +223,8 @@ if (form != null) {
     }
 
     function next() {
-        const step = nextStep.getAttribute('step');
+        const step = Number(nextStep.getAttribute('step'));
+        console.log('Next: ' + step)
         const mainSteps = document.querySelector('.content__main-form__steps');
         const stepsSection = [...document.querySelectorAll('.content__main-form-step')];
 
@@ -192,8 +240,13 @@ if (form != null) {
         prevStep.setAttribute('step', (step - 1));
         prevStep.classList.add('buttons__fixed-prev--active');
 
+        if (step == 5) {
+            nextStep.textContent = 'Guardar cambios y enviar';
+        } else{
+            nextStep.textContent = 'Continuar';
+        }
 
-        console.log(mainSteps)
+        // console.log(mainSteps)
         for (let x = 0; x <= (step - 2); x++) {
             mainSteps.children[x].classList.add('content__main-form__steps-step--done');
             mainSteps.children[x].classList.remove('content__main-form__steps-step--current');
@@ -205,6 +258,44 @@ if (form != null) {
             mainSteps.children[x].classList.add('content__main-form__steps-step--current');
         }
     }
+
+    // function prev() {
+    //     const step = Number(prevStep.getAttribute('step'));
+    //     console.log('Prev: ' + step);
+    
+    //     const mainSteps = document.querySelector('.content__main-form__steps');
+    //     const stepsSection = [...document.querySelectorAll('.content__main-form-step')];
+        
+    //     stepsSection.map(x => {
+    //         if (x.getAttribute('step') == step) {
+    //             x.classList.add('content__main-form-step--current');
+    //         } else {
+    //             x.classList.remove('content__main-form-step--current');
+    //         }
+    //     });
+    
+    //     nextStep.setAttribute('step', (step + 1));
+    //     prevStep.setAttribute('step', (step - 1));
+    
+    //     if (step == 2) {
+    //         prevStep.classList.remove('buttons__fixed-prev--active');
+    //     }
+    
+    //     if (step == 5) {
+    //         nextStep.textContent = 'Guardar cambios y enviar';
+    //     } else {
+    //         nextStep.textContent = 'Continuar';
+    //     }
+    
+    //     for (let x = (step - 1); x < mainSteps.children.length; x++) {
+    //         mainSteps.children[x].classList.remove('content__main-form__steps-step--done');
+    //         mainSteps.children[x].classList.remove('content__main-form__steps-step--current');
+    //     }
+    
+    //     for (let x = (step - 2); x < (step - 1); x++) {
+    //         mainSteps.children[x].classList.add('content__main-form__steps-step--current');
+    //     }
+    // }
 }
 
 // * Input Boolean
@@ -233,6 +324,8 @@ if (inputBoolean != null) {
                         return x.getAttribute('data-boolean') == dataBoolean
                     }
                 });
+
+
     
                 if (trueVal.checked) {
                     currentSection[0].classList.add('data__boolean--active');
