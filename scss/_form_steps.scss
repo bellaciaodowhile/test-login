@@ -25,6 +25,8 @@
             flex-wrap: nowrap;
             gap: 5px;
             padding-bottom: 2rem;
+            overflow-x: auto;
+            transition: $trs;
 
             &-step {
                 position: relative;
@@ -38,6 +40,9 @@
                     padding: 0px;
                     word-wrap: break-word;
                     font-size: .88rem;
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
                 }
 
                 &::before {
@@ -56,6 +61,7 @@
                     flex-grow: 1;
                     height: 1px;
                     border-bottom: 2px solid $google;
+                    min-width: 50px;
                 }
 
                 &--current {
@@ -113,6 +119,7 @@
             color: $title-section;
             font-weight: $semibold;
             margin-bottom: 1.5rem;
+
             &--min {
                 margin-bottom: .5rem;
             }

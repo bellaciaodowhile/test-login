@@ -164,44 +164,45 @@ if (form != null) {
         // } else {
         //     next();
         //     console.log('Puedes seguir al paso 2')
-        //     // alert('Puedes pasar al paso 2')
-        //     // console.log(dataStep1)
-        // }
 
-        // * -- Step 2
 
-        // const inputsStep2 = document.querySelectorAll('section.content__main-form-step[step="2"] input, section.content__main-form-step[step="2"] textarea');
-        // console.log(inputsStep2)
-        // const dataStep2 = {};
-        // const emptyFieldsStep2 = [];
+        //     // * -- Step 2
 
-        // inputsStep2.forEach(input => {
-        //     const name = input.getAttribute('name');
-        //     const value = input.value.trim();
+        //     const inputsStep2 = document.querySelectorAll('section.content__main-form-step[step="2"] input, section.content__main-form-step[step="2"] textarea');
+        //     console.log(inputsStep2)
+        //     const dataStep2 = {};
+        //     const emptyFieldsStep2 = [];
 
-        //     if (value === '') {
-        //         emptyFieldsStep2.push(name);
-        //     }
+        //     inputsStep2.forEach(input => {
+        //         const name = input.getAttribute('name');
+        //         const value = input.value.trim();
 
-        //     if (input.type === 'radio' && input.checked) {
-        //         dataStep2[name] = input.value;
-        //     } else {
-        //         dataStep2[name] = value;
-        //     }
-        // });
+        //         if (value === '') {
+        //             emptyFieldsStep2.push(name);
+        //         }
 
-        // if (emptyFieldsStep2.length > 0) {
-        //     alertBuskadent({
-        //         type: 'warning',
-        //         title: 'Faltan campos por llenar',
-        //         description: 'Se requieren llenar todos los campos'
+        //         if (input.type === 'radio' && input.checked) {
+        //             dataStep2[name] = input.value;
+        //         } else {
+        //             dataStep2[name] = value;
+        //         }
         //     });
-        // } else {
-        //     next();
-        //     console.log('Puedes seguir al paso 3');
-        //     // Aquí puedes hacer lo que necesites con los datos recopilados en dataStep2
-        //     console.log(dataStep2);
+
+        //     if (emptyFieldsStep2.length > 0) {
+        //         alertBuskadent({
+        //             type: 'warning',
+        //             title: 'Faltan campos por llenar',
+        //             description: 'Se requieren llenar todos los campos'
+        //         });
+        //     } else {
+        //         next();
+        //         console.log('Puedes seguir al paso 3');
+        //         // Aquí puedes hacer lo que necesites con los datos recopilados en dataStep2
+        //         console.log(dataStep2);
+        //     }
         // }
+
+
 
 
 
@@ -224,7 +225,61 @@ if (form != null) {
 
     function next() {
         const step = Number(nextStep.getAttribute('step'));
-        console.log('Next: ' + step)
+        // console.log('Next: ' + step)
+        const mainSteps = document.querySelector('.content__main-form__steps');
+        const stepsSection = [...document.querySelectorAll('.content__main-form-step')];
+
+        if (step < 6) {
+            stepsSection.map(x => {
+                if (x.getAttribute('step') == step) {
+                    x.classList.add('content__main-form-step--current');
+                } else {
+                    x.classList.remove('content__main-form-step--current');
+                }
+            });
+        }
+
+        if (step == 6) {
+            alertBuskadent({
+                type: 'success',
+                title: '¡Enhorabuena!',
+                description: 'Operación exitosa'
+            })
+        }
+
+        nextStep.setAttribute('step', (step + 1));
+        prevStep.setAttribute('step', (step - 1));
+        prevStep.classList.add('buttons__fixed-prev--active');
+
+        if (step == 5) {
+            nextStep.textContent = 'Guardar cambios y enviar';
+        } else {
+            nextStep.textContent = 'Continuar';
+        }
+
+
+        // console.log(mainSteps)
+        for (let x = 0; x <= (step - 2); x++) {
+            if (x < 4) {
+                mainSteps.children[x].classList.add('content__main-form__steps-step--done');
+                mainSteps.children[x].classList.remove('content__main-form__steps-step--current');
+                // console.log('Done:')
+                // console.log(x)
+            }
+        }
+        for (let x = (step - 1); x < step; x++) {
+            if (x < 5) {
+                // console.log('Current:')
+                mainSteps.children[x].classList.add('content__main-form__steps-step--current');
+            }
+        }
+        if (step <= 5) moveScrollStepX('next');
+    }
+
+    function prev() {
+        const step = Number(prevStep.getAttribute('step'));
+        // console.log('Prev: ' + step);
+
         const mainSteps = document.querySelector('.content__main-form__steps');
         const stepsSection = [...document.querySelectorAll('.content__main-form-step')];
 
@@ -238,65 +293,90 @@ if (form != null) {
 
         nextStep.setAttribute('step', (step + 1));
         prevStep.setAttribute('step', (step - 1));
-        prevStep.classList.add('buttons__fixed-prev--active');
+        // console.log('Step: ' + step)
+        if (step == 1) {
+            prevStep.classList.remove('buttons__fixed-prev--active');
+        }
 
         if (step == 5) {
             nextStep.textContent = 'Guardar cambios y enviar';
-        } else{
+        } else {
             nextStep.textContent = 'Continuar';
         }
 
-        // console.log(mainSteps)
-        for (let x = 0; x <= (step - 2); x++) {
-            mainSteps.children[x].classList.add('content__main-form__steps-step--done');
+        for (let x = (step - 1); x < mainSteps.children.length; x++) {
+            mainSteps.children[x].classList.remove('content__main-form__steps-step--done');
             mainSteps.children[x].classList.remove('content__main-form__steps-step--current');
-            console.log('Done:')
-            console.log(x)
+            if (x == (step - 1)) {
+                mainSteps.children[x].classList.add('content__main-form__steps-step--current');
+            }
         }
-        for (let x = (step - 1); x < step; x++) {
-            console.log('Current:')
+
+        for (let x = (step - 2); x < (step - 1); x++) {
+            if (x < 0) x = 0;
             mainSteps.children[x].classList.add('content__main-form__steps-step--current');
         }
+        moveScrollStepX('prev');
     }
 
-    // function prev() {
-    //     const step = Number(prevStep.getAttribute('step'));
-    //     console.log('Prev: ' + step);
-    
-    //     const mainSteps = document.querySelector('.content__main-form__steps');
-    //     const stepsSection = [...document.querySelectorAll('.content__main-form-step')];
-        
-    //     stepsSection.map(x => {
-    //         if (x.getAttribute('step') == step) {
-    //             x.classList.add('content__main-form-step--current');
-    //         } else {
-    //             x.classList.remove('content__main-form-step--current');
-    //         }
-    //     });
-    
-    //     nextStep.setAttribute('step', (step + 1));
-    //     prevStep.setAttribute('step', (step - 1));
-    
-    //     if (step == 2) {
-    //         prevStep.classList.remove('buttons__fixed-prev--active');
-    //     }
-    
-    //     if (step == 5) {
-    //         nextStep.textContent = 'Guardar cambios y enviar';
-    //     } else {
-    //         nextStep.textContent = 'Continuar';
-    //     }
-    
-    //     for (let x = (step - 1); x < mainSteps.children.length; x++) {
-    //         mainSteps.children[x].classList.remove('content__main-form__steps-step--done');
-    //         mainSteps.children[x].classList.remove('content__main-form__steps-step--current');
-    //     }
-    
-    //     for (let x = (step - 2); x < (step - 1); x++) {
-    //         mainSteps.children[x].classList.add('content__main-form__steps-step--current');
-    //     }
-    // }
-}
+    // * 
+    function moveScrollStepX(fn) {
+        console.log(fn)
+        const currentStep = document.querySelector('.content__main-form__steps-step--current');
+        const stepsContainer = document.querySelector('.content__main-form__steps');
+        if (currentStep && stepsContainer) {
+            if (currentStep.previousElementSibling != null) {
+                let scrollOffset = currentStep.previousElementSibling.offsetWidth;
+                let scrollStorage = localStorage.getItem('scroll')
+                console.log(fn)
+                if (fn == 'next') {
+                    console.log(scrollOffset)
+                    localStorage.setItem('scroll', (scrollOffset + Number(scrollStorage)));
+                } else {
+                    console.log(scrollOffset)
+                    console.log(Number(scrollStorage))
+                    // localStorage.setItem('scroll', (scrollOffset - Number(scrollStorage)));
+                }
+                let scroll = localStorage.getItem('scroll')
+                stepsContainer.scrollTo({
+                    left: scroll,
+                    behavior: 'smooth'
+                });
+                console.log(scroll)
+            } else {
+                stepsContainer.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+                localStorage.setItem('scroll', 0);
+            }
+        }
+    }
+    if (performance.navigation.type === 1) {
+        localStorage.setItem('scroll', 0);
+    }
+    const stepsContainer = document.getElementById('stepsContainer');
+    let isDragging = false;
+    let startX;
+
+    stepsContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - stepsContainer.offsetLeft;
+        stepsContainer.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            const newX = e.pageX - startX;
+            stepsContainer.scrollLeft = newX;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        stepsContainer.style.cursor = 'grab';
+    });
+} // End Form
 
 // * Input Boolean
 const inputBoolean = [...document.querySelectorAll('.main__boolean')];
@@ -311,7 +391,7 @@ if (inputBoolean != null) {
                 let currentInput = inputValidTrue.filter(x => x.checked)
                 console.log(currentInput[0].id)
                 let currentSection = sectionsDataBoolean.filter(x => {
-                    if(x.getAttribute('data-boolean') == currentInput[0].id) {
+                    if (x.getAttribute('data-boolean') == currentInput[0].id) {
                         return x;
                     }
                 });
@@ -326,7 +406,7 @@ if (inputBoolean != null) {
                 });
 
 
-    
+
                 if (trueVal.checked) {
                     currentSection[0].classList.add('data__boolean--active');
                 } else {
@@ -434,7 +514,7 @@ if (uploads != null) {
 
                             const files = inputFile.files;
                             const newFiles = Array.from(files).filter(file => file.name !== id);
-                            
+
                             // console.log(newFiles)
 
                             alertBuskadent({
@@ -442,7 +522,7 @@ if (uploads != null) {
                                 title: 'Operación exitosa',
                                 description: `Archivo ${name} eliminado`
                             });
-                            
+
                         }
                     }
                 });
@@ -465,6 +545,7 @@ if (uploadsMini != null) {
 }
 
 // * Alert
+// * success, warning, info, error
 function alertBuskadent({
     type,
     title,
@@ -486,7 +567,9 @@ function alertBuskadent({
     console.log(close)
     close.onclick = (e) => {
         alert.classList.add('alert__buskadent--remove');
-        setTimeout(() => { alert.remove(); }, 300)
+        setTimeout(() => {
+            alert.remove();
+        }, 300)
     };
     removeAlert();
 
@@ -556,12 +639,13 @@ if (orderBys != null) {
 }
 
 if (document.querySelector('.dashboard') != null) {
+
     alertBuskadent({
         type: 'success',
         title: 'Proceso exitoso',
         description: 'Se generó la historia clínica con éxito y se envió al médico.'
     });
-} else{
+} else {
     alertBuskadent({
         type: 'success',
         title: 'Sesión iniciada',
@@ -570,7 +654,6 @@ if (document.querySelector('.dashboard') != null) {
 }
 
 // * Textarea
-
 const textareaInputs = [...document.querySelectorAll('textarea')];
 if (textareaInputs != null) {
 
@@ -586,3 +669,26 @@ if (textareaInputs != null) {
     }
 
 }
+// * NavMain
+const navMenu = document.querySelector(".nav-menu-mobile");
+if (navMenu != null) {
+    const navToggle = document.querySelector(".nav-menu-burger-button");
+    navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("nav-menu_visible");
+    });
+}
+
+function createTooltip() {
+    const tooltips = document.querySelectorAll('.tooltip');
+    tooltips.forEach((tooltip) => {
+        const position = tooltip.getAttribute('data-tooltip-position');
+        tooltip.addEventListener('mouseenter', () => {
+            tooltip.style.setProperty('data-tooltip', position);
+        });
+        tooltip.addEventListener('mouseleave', () => {
+            tooltip.style.setProperty('data-tooltip', '');
+        });
+    });
+}
+
+createTooltip();

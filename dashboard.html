@@ -145,120 +145,273 @@
 
   <!-- Start Content -->
 
+  <!-- Tareas -->
+<!-- Que el responsive de el menu simplemente me vaya para arriba totalmente sencillo -->
   
+
+  <!-- End -->
   <main class="dashboard">
     <div class="container">
       <div class="dashboard__content">
         <aside class="dashboard__content-sidebar">
-          <div class="dashboard__content-sidebar__profile">
+          <div class="dashboard__content-sidebar__profile tooltip__buskadent" data-tooltip="Emilio Salaverria" data-tooltip-position="right">
             <img src="./images/emilioPerfil.png" alt="Name Lastname">
             <span>Emilio Salaverria</span>
           </div>
           <ul class="dashboard__content-sidebar__menu">
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Dashboard" data-tooltip-position="right">
                 <img src="./images/dashboardIconOff.svg" alt="Dashboard">
                 <span>Dashboard</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">
-                <img src="./images/pagosIconOff.svg" alt="Dashboard">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Mi perfil" data-tooltip-position="right">
+                <img src="./images/pagosIconOff.svg" alt="Mi perfil">
                 <span>Mi perfil</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item dashboard__content-sidebar__menu-item--active">
-              <a href="#">
-                <img src="./images/historialIconOff.svg" alt="Dashboard">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Historial clínico" data-tooltip-position="right">
+                <img src="./images/historialIconOff.svg" alt="Historial clínico">
                 <span>Historial clínico</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Mis citas" data-tooltip-position="right">
                 <img src="./images/citasIconOff.svg" alt="Dashboard">
                 <span>Mis citas</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">
-                <img src="./images/dentistasIconOff.svg" alt="Dashboard">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Mis dentistas" data-tooltip-position="right">
+                <img src="./images/dentistasIconOff.svg" alt="Mis dentistas">
                 <span>Mis dentistas</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">
-                <img src="./images/tratamientosIconOff.svg" alt="Dashboard">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Mis tratamientos" data-tooltip-position="right">
+                <img src="./images/tratamientosIconOff.svg" alt="Mis tratamientos">
                 <span>Mis tratamientos</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">
-                <img src="./images/pagosIconOff.svg" alt="Dashboard">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Mis pagos y facturas" data-tooltip-position="right">
+                <img src="./images/pagosIconOff.svg" alt="Mis pagos y facturas">
                 <span>Mis pagos y facturas</span>
               </a>
             </li>
             <li class="dashboard__content-sidebar__menu-item">
-              <a href="#">                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                <img src="./images/cerrarIconOff.svg" alt="Dashboard">
+              <a href="#" class="tooltip__buskadent" data-tooltip="Cerrar sesión" data-tooltip-position="right">
+                <img src="./images/cerrarIconOff.svg" alt="Cerrar sesión">
                 <span>Cerrar sesión</span>
               </a>
             </li>
           </ul>
-          <button type="button" class="btn__buskadent mt-4">
-            Agendar nueva cita
+          <button type="button" class="btn__buskadent mt-4 tooltip__buskadent" data-tooltip="Agendar nueva cita" data-tooltip-position="right">
+            <span>Agendar nueva cita</span>
+            <i class="material-icons-outlined">add</i>
           </button>
         </aside>
         <section class="dashboard__content-main">
-          <div>
-            <div class="order__by">
-              <span>Consultorio</span>
-              <div class="order__by-current">
-                <span>
-                  <span>Ver todos</span>
-                  <i class="material-icons-outlined">expand_more</i>
-                </span>
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="order__by">
+                <span>Consultorio</span>
+                <div class="order__by-current">
+                  <span>
+                    <span>Ver todos</span>
+                    <i class="material-icons-outlined">expand_more</i>
+                  </span>
+                </div>
+                <div class="order__by-content">
+                  <div class="order__by-content-item">Ver todos</div>
+                  <div class="order__by-content-item">A-Z</div>
+                  <div class="order__by-content-item">Z-A</div>
+                </div>
               </div>
-              <div class="order__by-content">
-                <div class="order__by-content-item">Ver todos</div>
-                <div class="order__by-content-item">A-Z</div>
-                <div class="order__by-content-item">Z-A</div>
+              <div class="order__by">
+                <span>Dentista</span>
+                <div class="order__by-current">
+                  <span>
+                    <span>Ver todos</span>
+                    <i class="material-icons-outlined">expand_more</i>
+                  </span>
+                </div>
+                <div class="order__by-content">
+                  <div class="order__by-content-item">Ver todos</div>
+                  <div class="order__by-content-item">A-Z</div>
+                  <div class="order__by-content-item">Z-A</div>
+                </div>
               </div>
             </div>
-            <div class="order__by">
-              <span>Dentista</span>
-              <div class="order__by-current">
-                <span>
-                  <span>Ver todos</span>
-                  <i class="material-icons-outlined">expand_more</i>
-                </span>
-              </div>
-              <div class="order__by-content">
-                <div class="order__by-content-item">Ver todos</div>
-                <div class="order__by-content-item">A-Z</div>
-                <div class="order__by-content-item">Z-A</div>
-              </div>
+            <div class="input__search">
+              <input type="text" placeholder="Buscar">
+              <i class="material-icons-outlined">search</i>
             </div>
           </div>
-          <table class="table__buskadent mt-3">
-            <thead>
-              <tr>
-                <td>Fecha de creación</td>
-                <td>Historia clínica</td>
-                <td>Dentista</td>
-                <td>Consultorio</td>
-                <td></td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>20 Dic 2023</td>
-                <td>123456789</td>
-                <td>Dr. Luis Quintero Gomez</td>
-                <td>Lorem ipsum</td>
-                <td class="details">Ver detalles</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="main__table">
+            <table class="table__buskadent">
+              <thead>
+                <tr>
+                  <td>Fecha de creación</td>
+                  <td>Historia clínica</td>
+                  <td>Dentista</td>
+                  <td>Consultorio</td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+                <tr>
+                  <td>20 Dic 2023</td>
+                  <td>123456789</td>
+                  <td>Dr. Luis Quintero Gomez</td>
+                  <td>Lorem ipsum</td>
+                  <td class="details">Ver detalles</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
       </div>
     </div>

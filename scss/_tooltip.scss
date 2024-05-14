@@ -1,0 +1,50 @@
+.tooltip__buskadent {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip__buskadent::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: $uploading-bg;
+    color: $blue-dark;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: auto;
+    text-wrap: nowrap;
+    z-index: 3;
+}
+
+.tooltip__buskadent:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip__buskadent[data-tooltip-position="top"]::after {
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip__buskadent[data-tooltip-position="right"]::after {
+    top: 50%;
+    left: 110%;
+    transform: translateY(-55%);
+}
+
+.tooltip__buskadent[data-tooltip-position="left"]::after {
+    top: 50%;
+    right: 110%;
+    transform: translateY(-50%);
+}
+
+.tooltip__buskadent[data-tooltip-position="bottom"]::after {
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+}

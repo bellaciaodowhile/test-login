@@ -208,4 +208,26 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
     resize: none;
     overflow: hidden;
+    margin-bottom: 1rem;
+}
+.input__search {
+    position: relative;
+    input {
+        display: inline-block;
+        font-size: .8rem;
+        background: $input;
+        color: $color-text-radio;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        padding: 5px 5px 5px 31px;
+        width: auto;
+    }
+    i {
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        font-size: 1.2rem;
+        color: $color-input-label;
+    }
 }

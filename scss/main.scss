@@ -35,7 +35,9 @@ $hideFadeLeft: 300ms hideFadeLeft ease-in-out forwards;
         transform: translateY(-3px);
     }
 }
+
 @import 'animations';
+@import 'tooltip';
 @import 'alerts';
 @import 'inputs';
 @import 'login';
@@ -44,6 +46,9 @@ $hideFadeLeft: 300ms hideFadeLeft ease-in-out forwards;
 @import 'upload';
 @import 'form_steps';
 @import 'dashboard';
+@import 'nav';
+@import 'medias';
+
 button {
     font-size: .75rem;
     outline: none;

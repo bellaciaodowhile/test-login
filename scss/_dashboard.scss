@@ -11,7 +11,19 @@
         display: grid;
         grid-template-columns: 300px 1fr;
         column-gap: 1.5rem;
-
+        overflow-x: auto;
+        &::-webkit-scrollbar-track, .content::-webkit-scrollbar-track, .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
+            background: #fff;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #cccccc;
+            border-radius: 4px;
+            border: 0px solid #ffffff;
+        }
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 7px;
+        }
         &-sidebar {
             width: 300px;
             max-width: 300px;
@@ -19,7 +31,9 @@
             border-radius: 16px;
             background: #fff;
             padding: 2rem;
-
+            .tooltip__buskadent::after {
+                display: none;
+            }
             &__profile {
                 display: flex;
                 align-items: center;
@@ -33,7 +47,6 @@
                 span {
                     font-weight: 600;
                 }
-
             }
 
             &__menu {
@@ -76,6 +89,12 @@
                         }
                     }
                 }
+
+            }
+        }
+        .btn__buskadent {
+            i {
+                display: none;
             }
         }
 
@@ -90,62 +109,91 @@
     }
 }
 
-.table__buskadent {
-    width: 100%;
-
-    // background: red;
-    thead {
-        width: 100%;
-        background: $blue-light;
+.main__table {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 1rem;
+    transition: $trs;
+    &::-webkit-scrollbar-track, .content::-webkit-scrollbar-track, .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
+        background: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #0000;
         border-radius: 4px;
-        display: table-header-group;
-
-        tr {
-            position: relative;
-            display: table-row;
-            
-            td {
-                font-size: .8rem;
-                color: white;
-                padding: 10px 18px;
-            }
+        border: 0px solid #ffffff;
+    }
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background-color: #cccccc;
         }
     }
-
-    tbody {
-        tr {
-            border-bottom: 1px solid $hr;
+    .table__buskadent {
+        position: relative;
+        width: 100%;
+        td {
+            text-wrap: nowrap;
+        }
+    
+        thead {
+            width: 100%;
+            background: $blue-light;
+            border-radius: 4px;
+            display: table-header-group;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+            margin-top: 1rem;
             
-            td {
+            tr {
                 position: relative;
-                &:nth-child(1) {
-                    &::before {
-                        content: '⋮';
-                        position: absolute;
-                        top: 4px;
-                        left: 5px;
-                        font-size: 1.34rem;
-                        animation: $fadeInLeft;
-                        display: none;
+                display: table-row;
+                
+                td {
+                    font-size: .8rem;
+                    color: white;
+                    padding: 10px 18px;
+                }
+            }
+        }
+    
+        tbody {
+            margin-top: 2rem;
+            tr {
+                border-bottom: 1px solid $hr;
+                td {
+                    position: relative;
+                    &:nth-child(1) {
+                        &::before {
+                            content: '⋮';
+                            position: absolute;
+                            top: 4px;
+                            left: 5px;
+                            font-size: 1.34rem;
+                            animation: $fadeInLeft;
+                            display: none;
+                            cursor: pointer;
+                        }
+                    }
+                    font-size: .78rem;
+                    padding: 10px 18px;
+    
+                    &.details {
+                        color: $blue-light;
+                        font-weight: 500;
                         cursor: pointer;
                     }
                 }
-                font-size: .78rem;
-                padding: 10px 18px;
-
-                &.details {
-                    color: $blue-light;
-                    font-weight: 500;
-                    cursor: pointer;
+            &:hover {
+                td:nth-child(1) {
+                    &::before {
+                        display: block;
+                    }
                 }
             }
-        &:hover {
-            td:nth-child(1) {
-                &::before {
-                    display: block;
-                }
             }
-        }
         }
     }
 }
@@ -175,7 +223,7 @@
         width: 140px;
         background: white;
         box-shadow: 0 0 10px #00000026;
-        z-index: 2;
+        z-index: 4;
         display: none;
         animation: $fadeIn;
         &-item {

@@ -163,7 +163,7 @@
 
     <h4 class="content__main">
         <form action="#" class="content__main-form" method="post">
-            <section class="content__main-form__steps">
+            <section class="content__main-form__steps" id="stepsContainer">
                 <div class="content__main-form__steps-step content__main-form__steps-step--current">
                     <i class="material-icons-outlined">done</i>
                     <span>Datos <br> básicos</span>
@@ -440,31 +440,31 @@
                     <span>¿Cómo considera su higiene bucal?</span>
                     <div class="d-flex">
                         <div class="radio">
-                            <input id="very_bad" name="frequency_visit" type="radio" value="very_bad" checked>
+                            <input id="very_bad" name="hygiene" type="radio" value="very_bad" checked>
                             <label for="very_bad" class="radio-label">
                                 <div>Muy mala</div>
                             </label>
                         </div>
                         <div class="radio">
-                            <input id="bad" name="frequency_visit" type="radio" value="bad">
+                            <input id="bad" name="hygiene" type="radio" value="bad">
                             <label for="bad" class="radio-label">
                                 <div>Mala</div>
                             </label>
                         </div>
                         <div class="radio">
-                            <input id="regular" name="frequency_visit" type="radio" value="regular">
+                            <input id="regular" name="hygiene" type="radio" value="regular">
                             <label for="regular" class="radio-label">
                                 <div>Regular</div>
                             </label>
                         </div>
                         <div class="radio">
-                            <input id="good" name="frequency_visit" type="radio" value="good">
+                            <input id="good" name="hygiene" type="radio" value="good">
                             <label for="good" class="radio-label">
                                 <div>Buena</div>
                             </label>
                         </div>
                         <div class="radio">
-                            <input id="excellent" name="frequency_visit" type="radio" value="excellent">
+                            <input id="excellent" name="hygiene" type="radio" value="excellent">
                             <label for="excellent" class="radio-label">
                                 <div>Excelente</div>
                             </label>
@@ -968,7 +968,7 @@
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, ¿Cómo
                                 controlas el tamaño de las porciones?</span>
                         </div> -->
-                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="portion_sizes" name="portion_sizes_description" placeholder="Si la respuesta es sí, ¿Cómo controlas el tamaño de las porciones?"></textarea>
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="portion_sizes" name="portion_sizes_description" placeholder="Si la respuesta es sí, ¿Cómo controlas el tamaño de las porciones?"></textarea>
                     </div>
                 </div>
                 <hr class="content__main-form__sp">
@@ -1185,7 +1185,7 @@
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona el
                                 tipo de cáncer y el familiar afectado.</span>
                         </div> -->
-                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_3" name="antecedent_3_description" placeholder="Si la respuesta es sí, menciona el tipo de cáncer y el familiar afectado."></textarea>
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_3" name="antecedent_3_description" placeholder="Si la respuesta es sí, menciona el tipo de cáncer y el familiar afectado."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1221,7 +1221,7 @@
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, especifica la
                                 enfermedad y el familiar afectado.</span>
                         </div> -->
-                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_4" name="antecedent_4_description" placeholder="Si la respuesta es sí, especifica la enfermedad y el familiar afectado."></textarea>
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_4" name="antecedent_4_description" placeholder="Si la respuesta es sí, especifica la enfermedad y el familiar afectado."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1402,7 +1402,7 @@
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, indica la
                                 cantidad promedio de cigarrillos que fumas al día y la duración del hábito.</span>
                         </div> -->
-                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_10" name="antecedent_10_description" placeholder="Si la respuesta es sí, indica la cantidad promedio de cigarrillos que fumas al día y la duración del hábito."></textarea>
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_10" name="antecedent_10_description" placeholder="Si la respuesta es sí, indica la cantidad promedio de cigarrillos que fumas al día y la duración del hábito."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1543,7 +1543,7 @@
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
                         </div> -->
-                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="antecedent_15" name="antecedent_15_description" placeholder="Si la respuesta es sí, menciona los medicamentos y la razón del tratamiento."></textarea>
+                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="antecedent_15" name="antecedent_15_description" placeholder="Si la respuesta es sí, menciona los medicamentos y la razón del tratamiento."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
@@ -1571,7 +1571,7 @@
                             <span class="input__text-label input__text-label--wrap">Si la respuesta es sí, menciona los
                                 métodos o tratamientos utilizados.</span>
                         </div> -->
-                        <textarea rows="4" class="input__textarea data__boolean" data-boolean="antecedent_16" name="antecedent_16_description" placeholder="Si la respuesta es sí, especifica los medicamentos y proporciona detalles relevantes."></textarea>
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="antecedent_16" name="antecedent_16_description" placeholder="Si la respuesta es sí, especifica los medicamentos y proporciona detalles relevantes."></textarea>
                     </div>
                 </div>
             </section>
@@ -1635,7 +1635,7 @@
                                 enfermedades y proporciona detalles relevantes, como la fecha de diagnóstico y el
                                 tratamiento actual.</span>
                         </div> -->
-                        <textarea rows="2" class="input__textarea data__boolean" data-boolean="symptoms_2" name="symptoms_2_description" placeholder="Si la respuesta es sí, menciona los trastornos y proporciona detalles relevantes."></textarea>
+                        <textarea rows="3" class="input__textarea data__boolean" data-boolean="symptoms_2" name="symptoms_2_description" placeholder="Si la respuesta es sí, menciona los trastornos y proporciona detalles relevantes."></textarea>
                     </div>
                     <div>
                         <div class="content__main-form__label">
