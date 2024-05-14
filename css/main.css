@@ -1108,7 +1108,7 @@ main.login footer a {
 }
 
 .dashboard {
-  margin: 1.5rem 0;
+  padding: 1.5rem 0;
 }
 .dashboard__main {
   height: 100%;
@@ -1121,7 +1121,6 @@ main.login footer a {
   display: grid;
   grid-template-columns: 300px 1fr;
   column-gap: 1.5rem;
-  overflow-x: auto;
 }
 .dashboard__content::-webkit-scrollbar-track, .dashboard__content .content::-webkit-scrollbar-track, .dashboard__content .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
   background: #fff;
@@ -1150,6 +1149,7 @@ main.login footer a {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 10%;
 }
 .dashboard__content-sidebar__profile img {
   border-radius: 8px;
@@ -1172,10 +1172,11 @@ main.login footer a {
   color: #9FAAAC;
   font-size: 1rem;
   font-weight: normal;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 15px;
   transition: all 300ms ease-in-out;
+  width: 100%;
 }
 .dashboard__content-sidebar__menu-item a:hover {
   background: #F0F8FB;
@@ -1190,9 +1191,6 @@ main.login footer a {
 }
 .dashboard__content-sidebar__menu-item--active img {
   filter: brightness(0) saturate(100%) invert(24%) sepia(44%) saturate(1015%) hue-rotate(190deg) brightness(95%) contrast(97%);
-}
-.dashboard__content .btn__buskadent i {
-  display: none;
 }
 .dashboard__content-main {
   background: #fff;
@@ -1340,46 +1338,20 @@ main.login footer a {
   font-weight: 500;
 }
 
-/* Largest devices such as desktops (1280px and up) */
 @media only screen and (max-width: 1210px) {
   .dashboard__content {
-    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
   .dashboard__content-sidebar {
-    width: 100px;
-    min-width: 100px;
-    padding: 1rem;
+    width: auto;
+    max-width: 100%;
   }
   .dashboard__content-sidebar .tooltip__buskadent::after {
     display: block;
   }
-  .dashboard__content-sidebar__profile {
-    justify-content: center;
-  }
-  .dashboard__content-sidebar__profile span {
-    display: none;
-  }
-  .dashboard__content-sidebar__menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .dashboard__content-sidebar__menu-item span {
-    display: none;
-  }
-  .dashboard__content-sidebar .btn__buskadent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .dashboard__content-sidebar .btn__buskadent i {
-    display: flex;
-  }
-  .dashboard__content-sidebar .btn__buskadent span {
-    display: none;
-  }
 }
-/* Large devices such as laptops (1024px and up) */
 @media only screen and (max-width: 1024px) {
   .content__main-form__grid-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -1388,22 +1360,19 @@ main.login footer a {
 @media only screen and (max-width: 991px) {
   .dashboard__content {
     grid-template-columns: 1fr;
-    grid-template-rows: 60vh;
-  }
-  .dashboard__content-sidebar {
-    display: none;
   }
   .dashboard__content-main {
     padding: 1rem;
   }
 }
-/* Large devices such as laptops (1024px and up) */
 @media only screen and (max-width: 977px) {
   .content__main-form__steps {
     width: 400px;
     margin: 0 auto;
   }
-  .content__main-form__steps::-webkit-scrollbar-track, .content__main-form__steps .content::-webkit-scrollbar-track, .content__main-form__steps .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
+  .content__main-form__steps::-webkit-scrollbar-track,
+  .content__main-form__steps .content::-webkit-scrollbar-track,
+  .content__main-form__steps .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
     background: #fff;
   }
   .content__main-form__steps::-webkit-scrollbar-thumb {
@@ -1416,7 +1385,6 @@ main.login footer a {
     height: 0px;
   }
 }
-/* Medium devices such as tablets (768px and up) */
 @media only screen and (max-width: 768px) {
   .content__main-form__grid-3 {
     grid-template-columns: 1fr;
@@ -1436,7 +1404,6 @@ main.login footer a {
     width: 100px;
   }
 }
-/* Small devices such as large phones (640px and up) */
 @media only screen and (max-width: 640px) {
   .flex-between {
     flex-direction: column;

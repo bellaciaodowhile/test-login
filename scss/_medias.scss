@@ -1,129 +1,103 @@
-// @media only screen and (max-width: px) {
-//     .content__main-form__grid-3 {
-
-//     }
-// }
-
-/* Largest devices such as desktops (1280px and up) */
-@media only screen and (max-width: 1280px) {
-    // 
-}
-
 @media only screen and (max-width: 1210px) {
     .dashboard__content {
-        grid-template-columns: 100px 1fr;
+        gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
+
         &-sidebar {
             .tooltip__buskadent::after {
                 display: block;
             }
-            &__profile {
-                justify-content: center;
-                span {
-                    display: none;
-                }
-            }
-            width: 100px;
-            min-width: 100px;
-            padding: 1rem;
-            &__menu-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                span {
-                    display: none;
-                }
-            }
-            .btn__buskadent {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                i {
-                    display: flex;
-                }
-                span {
-                    display: none;
-                }
-            }
+
+            width: auto;
+            max-width: 100%;
         }
     }
 }
 
-/* Large devices such as laptops (1024px and up) */
 @media only screen and (max-width: 1024px) {
     .content__main-form__grid-3 {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
 }
 
 @media only screen and (max-width: 991px) {
     .dashboard__content {
         grid-template-columns: 1fr;
-        grid-template-rows: 60vh;
-        &-sidebar {
-            display: none;
-        }
+
         &-main {
             padding: 1rem;
         }
     }
 }
 
-/* Large devices such as laptops (1024px and up) */
 @media only screen and (max-width: 977px) {
     .content__main-form__steps {
         width: 400px;
         margin: 0 auto;
-        &::-webkit-scrollbar-track, .content::-webkit-scrollbar-track, .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
+
+        &::-webkit-scrollbar-track,
+        .content::-webkit-scrollbar-track,
+        .main-editors .content-textarea .textarea::-webkit-scrollbar-track {
             background: #fff;
         }
+
         &::-webkit-scrollbar-thumb {
             background-color: #cccccc;
             border-radius: 11px;
             border: 0px solid #ffffff;
         }
+
         &::-webkit-scrollbar {
             width: 5px;
             height: 0px;
         }
     }
 }
-/* Medium devices such as tablets (768px and up) */
+
 @media only screen and (max-width: 768px) {
     .content__main-form__grid-3 {
         grid-template-columns: 1fr;
         gap: 0;
     }
+
     .content__main-form__grid-2 {
         grid-template-columns: 1fr;
     }
+
     .upload__info {
         flex-direction: column;
         text-align: center;
+
         &-text {
             align-items: center;
         }
+
         img {
             width: 100px;
         }
     }
 }
 
-/* Small devices such as large phones (640px and up) */
 @media only screen and (max-width: 640px) {
     .flex-between {
         flex-direction: column;
         align-items: normal;
     }
+
     .content__main-form {
         padding: 1.5rem;
     }
+
     .content__main-form__steps {
         width: 300px;
     }
+
     .content__main {
         padding: 2rem 1rem 9rem 1rem;
     }
+
     .upload__info {
         padding: 1rem;
     }
@@ -133,16 +107,20 @@
     .content__main-buttons__fixed {
         flex-direction: column;
         padding: 1rem;
+
         :nth-child(1) {
             order: 1;
         }
+
         &-right {
             flex-direction: column;
         }
+
         button {
             width: 100%;
         }
     }
+
     .alert__buskadent {
         top: 0;
         width: 100%;
@@ -155,6 +133,7 @@
     .content__main-form__steps {
         width: 200px;
     }
+
     .content__main-form {
         padding: .8rem;
     }
