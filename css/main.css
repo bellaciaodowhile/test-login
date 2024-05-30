@@ -1046,6 +1046,10 @@ main.login footer a {
   gap: 0;
 }
 
+.gap-10 {
+  gap: 10px;
+}
+
 .upload {
   width: 100%;
 }
