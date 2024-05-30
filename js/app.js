@@ -76,24 +76,24 @@ if (addContact != null) {
         item.classList.add('content__main-form__grid-3', 'animation-fadeIn');
         item.innerHTML = `
         <div class="input__text">
-            <input class="input__text-input" name="name_contact${addContactIndex}" type="text" required autocomplete="off">
-            <span class="input__text-label">Nombre contacto</span>
-            </div>
-            <div class="input__text input__text--select">
-            <input class="input__text-input" name="relationship${addContactIndex}" type="text" required autocomplete="off">
-            <span class="input__text-label">Parentesco</span>
-            <i class="material-icons-outlined">expand_more</i>
-            <div class="input__text--select-content">
-                <div class="input__text--select-content__item">
-                Parentesco 1
-                </div>
-                <div class="input__text--select-content__item">
-                Parentesco 2
-                </div>
-                <div class="input__text--select-content__item">
-                Parentesco 3
-                </div>
-            </div>
+        <input class="input__text-input" name="name_contact${addContactIndex}" type="text" required autocomplete="off">
+        <span class="input__text-label">Nombre contacto</span>
+        </div>
+        <div class="input__text input__text--select">
+        <input class="input__text-input" name="relationship${addContactIndex}" type="text" required autocomplete="off">
+        <span class="input__text-label">Parentesco</span>
+        <i class="material-icons-outlined">expand_more</i>
+        <div class="input__text--select-content">
+        <div class="input__text--select-content__item">
+        Parentesco 1
+        </div>
+        <div class="input__text--select-content__item">
+        Parentesco 2
+        </div>
+        <div class="input__text--select-content__item">
+        Parentesco 3
+        </div>
+        </div>
         </div>`;
 
         item.appendChild(btnDelete);
@@ -119,95 +119,8 @@ if (form != null) {
     // * Events
     nextStep.onclick = function (e) {
         e.preventDefault();
-
         console.log('next')
         next();
-        // * Steps
-        // * -- Step 1
-        // const inputsStep1 = inputsStep(1);
-        // const contactsArray = [];
-        // const dataStep1 = {};
-
-        // let relationshipValue = inputsStep1.filter(x => {
-        //     if (x.getAttribute('name').startsWith('relationship1')) {
-        //         return x.value.trim();
-        //     }
-        // });
-        // inputsStep1.forEach(input => {
-        //     if (input.getAttribute('name').startsWith('name_contact')) {
-        //         const contactObj = {
-        //             contact: input.value,
-        //             relationship: relationshipValue
-        //         };
-        //         if (input.getAttribute('name').startsWith('relationship')) {
-        //             contactObj.relationship = input.value;
-        //         }
-        //         contactsArray.push(contactObj);
-        //     } else if (input.getAttribute('name').startsWith('relationship')) {
-        //         relationshipValue = input.value;
-        //     } else if (input.type === 'radio' && input.checked) {
-        //         dataStep1[input.getAttribute('name')] = input.value;
-        //     } else {
-        //         dataStep1[input.getAttribute('name')] = input.value;
-        //     }
-        // });
-
-        // dataStep1['contacts'] = contactsArray;
-
-        // const emptyStep1 = emptyFields(inputsStep1);
-        // if (emptyStep1) {
-        //     alertBuskadent({
-        //         type: 'warning',
-        //         title: 'Faltan campos por llenar',
-        //         description: 'Se requieren llenar todos los campos'
-        //     });
-        // } else {
-        //     next();
-        //     console.log('Puedes seguir al paso 2')
-
-
-        //     // * -- Step 2
-
-        //     const inputsStep2 = document.querySelectorAll('section.content__main-form-step[step="2"] input, section.content__main-form-step[step="2"] textarea');
-        //     console.log(inputsStep2)
-        //     const dataStep2 = {};
-        //     const emptyFieldsStep2 = [];
-
-        //     inputsStep2.forEach(input => {
-        //         const name = input.getAttribute('name');
-        //         const value = input.value.trim();
-
-        //         if (value === '') {
-        //             emptyFieldsStep2.push(name);
-        //         }
-
-        //         if (input.type === 'radio' && input.checked) {
-        //             dataStep2[name] = input.value;
-        //         } else {
-        //             dataStep2[name] = value;
-        //         }
-        //     });
-
-        //     if (emptyFieldsStep2.length > 0) {
-        //         alertBuskadent({
-        //             type: 'warning',
-        //             title: 'Faltan campos por llenar',
-        //             description: 'Se requieren llenar todos los campos'
-        //         });
-        //     } else {
-        //         next();
-        //         console.log('Puedes seguir al paso 3');
-        //         // Aquí puedes hacer lo que necesites con los datos recopilados en dataStep2
-        //         console.log(dataStep2);
-        //     }
-        // }
-
-
-
-
-
-
-
     }
 
     prevStep.onclick = function (e) {
@@ -470,18 +383,18 @@ if (uploads != null) {
                                 // console.log(listFiles.querySelector('#file' + i))
                                 listFiles.querySelector('#file' + i).innerHTML = `
                                 <article id="${file.name}" style="--uploading: ${percentComplete}%" class="upload__files-item upload__files-item--uploading">
-                                    <div class="upload__files-content">
-                                        <span class="upload__files-item__title">${name}.${type}</span>
-                                        <i class="material-icons-outlined upload__files-item__delete">close</i>
-                                    </div>
+                                <div class="upload__files-content">
+                                <span class="upload__files-item__title">${name}.${type}</span>
+                                <i class="material-icons-outlined upload__files-item__delete">close</i>
+                                </div>
                                 </article>`;
                             } else {
                                 uploadedHTML = `
                                 <article id="${file.name}" class="upload__files-item upload__files-item--success">
-                                    <div class="upload__files-content">
-                                        <span class="upload__files-item__title">${name}.${type}</span>
-                                        <i class="material-icons-outlined upload__files-item__delete">delete</i>
-                                    </div>
+                                <div class="upload__files-content">
+                                <span class="upload__files-item__title">${name}.${type}</span>
+                                <i class="material-icons-outlined upload__files-item__delete">delete</i>
+                                </div>
                                 </article>`;
                                 listFiles.insertAdjacentHTML("afterbegin", uploadedHTML);
                             }
@@ -530,7 +443,7 @@ if (uploads != null) {
             }
 
         });
-    });
+});
 }
 
 // * -- Upload Mini
@@ -558,13 +471,12 @@ function alertBuskadent({
     if (type == 'warning') type = 'warning_amber';
     alert.innerHTML = `<i class="material-icons-outlined alert__buskadent-icon">${type}</i>
     <div class="alert__buskadent-text">
-        <strong>${title}</strong>
-        <span>${description}</span>
+    <strong>${title}</strong>
+    <span>${description}</span>
     </div>
     <i class="material-icons-outlined alert__buskadent-close">close</i>`;
     document.body.appendChild(alert);
     const close = alert.querySelector('.alert__buskadent-close');
-    console.log(close)
     close.onclick = (e) => {
         alert.classList.add('alert__buskadent--remove');
         setTimeout(() => {
@@ -678,17 +590,136 @@ if (navMenu != null) {
     });
 }
 
-function createTooltip() {
-    const tooltips = document.querySelectorAll('.tooltip');
-    tooltips.forEach((tooltip) => {
-        const position = tooltip.getAttribute('data-tooltip-position');
-        tooltip.addEventListener('mouseenter', () => {
-            tooltip.style.setProperty('data-tooltip', position);
-        });
-        tooltip.addEventListener('mouseleave', () => {
-            tooltip.style.setProperty('data-tooltip', '');
-        });
+// function createTooltip() {
+//     const tooltips = document.querySelectorAll('.tooltip');
+//     tooltips.forEach((tooltip) => {
+//         const position = tooltip.getAttribute('data-tooltip-position');
+//         tooltip.addEventListener('mouseenter', () => {
+//             tooltip.style.setProperty('data-tooltip', position);
+//         });
+//         tooltip.addEventListener('mouseleave', () => {
+//             tooltip.style.setProperty('data-tooltip', '');
+//         });
+//     });
+// }
+
+// createTooltip();
+
+const $tabsHead = [...document.querySelectorAll('.tabs__buskadent-head')];
+const $tabsBody = [...document.querySelectorAll('.tabs__buskadent-body')];
+
+$tabsHead.map(($tab, $indexTab) => {
+    const $marked = $tab.querySelector('.tabs__buskadent-marked');
+    const $tabs = [...$tab.querySelectorAll('.tabs__buskadent-tab')]
+
+    const $body = $tabsBody[$indexTab];
+    const $bodyItems = [...$body.querySelectorAll('.tabs__buskadent-tab')]
+
+    $tabs.map(($tabItem, $index) => {
+        let $current = $tabs.filter(x => x.classList.contains('tabs__buskadent-tab--active'))[0];
+
+        $marked.style.width = `${($current.offsetWidth)}px`;
+        $marked.style.left = `${($current.offsetLeft)}px`;
+
+        $tabItem.onclick = (e) => {
+            e.preventDefault();
+            const $markedWidth = `${(e.target.offsetWidth)}px`;
+            const $markedPosition = `${(e.target.offsetLeft)}px`;
+
+            $tabs.map(x => x.classList.remove('tabs__buskadent-tab--active'));
+            $tabs[$index].classList.add('tabs__buskadent-tab--active');
+            $bodyItems.map(x => x.classList.remove('tabs__buskadent-tab--active'));
+            $bodyItems[$index].classList.add('tabs__buskadent-tab--active');
+            $marked.style.width = $markedWidth;
+            $marked.style.left = $markedPosition;
+        }
     });
+});
+
+// Upload img btns
+const uploadProfiles = [...document.querySelectorAll('.upload__profile')];
+uploadProfiles.map(upload => {
+    const img = upload.querySelector('.profile__img');
+    const btn = upload.querySelector('.btn__upload__img');
+    const input = upload.querySelector('input');
+
+    btn.onclick = function(e) {
+        e.preventDefault();
+        uploadImgBasic(input, img);
+    }
+});
+
+function uploadImgBasic(input, toImage) {
+    const fileInput = input;
+    const profileImg = toImage;
+
+    fileInput.click();
+
+    fileInput.addEventListener('change', function() {
+        const file = fileInput.files[0];
+        const maxSize = 500 * 1024; // 500kb in bytes
+
+    if (file && (file.type === 'image/png' || file.type === 'image/jpeg') && file.size <= maxSize) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            profileImg.src = e.target.result;
+        }
+
+        reader.readAsDataURL(file);
+    } else {
+       alertBuskadent({
+            type: 'warning',
+            title: 'Ha ocurrido un problema',
+            description: `Por favor selecciona un archivo PNG o JPG con un tamaño máximo de 500kb.`
+        });
+       fileInput.value = ''; 
+   }
+});
 }
 
-createTooltip();
+const dropdownsBuskadents = [...document.querySelectorAll('.dropdown__buskadent')];
+dropdownsBuskadents.map(dropdown => {
+    const content = dropdown.querySelector('.dropdown__buskadent-content');
+    dropdown.onclick = (e) => {
+        e.preventDefault();
+        if (dropdown.classList.contains('dropdown__buskadent--active')) {
+            dropdown.classList.remove('dropdown__buskadent--active');
+        } else {
+            dropdown.classList.add('dropdown__buskadent--active');
+        }
+    }
+});
+
+const triggerModal = [...document.querySelectorAll('.trigger-modal-simple')]
+const modalSimple = [...document.querySelectorAll('.modal-simple')]
+
+triggerModal.map((el, index) => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idTrigger = e.currentTarget.id
+        const modal = modalSimple.find((x) => x.id == idTrigger)
+        if (modal.style.display == '' || modal.style.display == 'none') {
+            modal.style.display = 'block'
+        } else {
+            modal.style.display = 'none'
+        }
+    })
+})
+modalSimple.map((el, i) => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault()
+        const content = el.children[0].children[0]
+
+        if (!content.contains(e.target)) {
+            el.style.display = 'none'
+        } else if (content.children[0].contains(e.target)) {
+            el.style.display = 'none'
+        }
+    })
+    const close = el.querySelector('.close-modal');
+    close.onclick = (e) => {
+        el.style.display = 'none'
+    }
+
+})

@@ -13,25 +13,48 @@
 
 .btn__outlined {
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
     transition: all 300ms ease-in-out;
-    font-weight: bold;
+    font-weight: 600;
     background: #0000;
     border: 1px solid $blue-light;
     color: $blue-light;
     text-align: center;
-    font-size: 1rem;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
 
     &--transparent {
         border-color: #0000;
         color: $blue-button;
     }
-
+    &--fill {
+        color: #fff;
+        background: $blue-light;
+        font-weight: 500;
+    }
+    &--big {
+        padding: 12px 18px;
+        font-size: .875rem;
+        width: fit-content;
+    }
+    &--blue {
+        background: $blue-button;
+        color: white;
+    }
     &:hover {
         transform: translateY(-3px);
     }
+    &--full {
+        width: 100%;
+    }
+}
+.btn__floating {
+    float: right;
 }
 .subtitle__bold {
     font-size: 12px;
@@ -89,4 +112,158 @@
 }
 .text__initial {
     text-transform: initial !important;
+}
+.title__section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &-icon {
+        background: $title-section;
+        width: 23px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        img {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(23%) saturate(0%) hue-rotate(37deg) brightness(103%) contrast(100%);
+            width: 15px;
+        }
+    }
+    span {
+        display: block;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: $title-section;
+    }
+}
+.c-pointer {
+    cursor: pointer;
+}
+.hero-back {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 7px;
+    h2 {
+        margin-bottom: 0;
+    }
+    img {
+        width: 20px;
+    }
+}
+.container--admin {
+    padding: 0 4vw;
+    margin: 0 auto;
+    .content__main-form__sp {
+        margin-bottom: 0;
+    }
+}
+.title__h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.title__subtitle {
+    display: flex;
+    flex-direction: column;
+    span {
+        display: block;
+        &:nth-child(1) {
+            font-size: .875rem;
+            color: $color-input-label;
+        }
+        &:nth-child(2) {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}
+.box__blue {
+    background: $uploading-bg;
+    border-radius: 16px;
+    padding: 1rem;
+}
+.bold-500 {
+    font-weight: 500;
+}
+.bold-500 {
+    font-weight: 500;
+}
+.item__input {
+    :nth-child(1) {
+        font-size: .75rem;
+        font-weight: 600;
+    }
+}
+.item__back {
+    color: $title-section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    img {
+        filter: brightness(0) saturate(100%) invert(24%) sepia(14%) saturate(3626%) hue-rotate(193deg) brightness(95%) contrast(96%);
+        width: 20px;
+    }
+    span {
+        display: block;
+        font-weight: 600;
+    }
+
+}
+.upload__profile {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 10px;
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        justify-content: center;
+        span {
+            display: block;
+            font-weight: 700;
+        }
+        small {
+            margin: 0;
+        }
+    }
+    img.profile__img {
+        width: 101px;
+        height: 101px;
+        border-radius: 8px;
+    }
+}
+.title__small {
+    margin: 0;
+    font-weight: 600;
+    color: $color-text-radio;
+    font-size: .75rem !important;
+}
+.form-check {
+    font-size: .80rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    input {
+        width: 1.3rem;
+        height: 1.3rem;
+        border-color: $google;
+        &[type=checkbox] {
+            border-radius: 4px;
+        }
+    }
+    label {
+        margin-top: 5px;
+    }
+}
+.visibility {
+    cursor: pointer;
+}
+.max-350 {
+    max-width: 350px;
+}
+.no-gap {
+    gap: 0;
 }

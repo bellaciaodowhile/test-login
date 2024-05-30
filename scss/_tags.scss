@@ -1,0 +1,31 @@
+.tag-dentist {
+    background: $blue-tag;
+    border-radius: 100px;
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    img {
+        width: 15px;
+    }
+}
+.tag {
+    border-radius: 100px;
+    padding: 3px 10px;
+    border: 1px solid;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+    &--complete {
+        color: $green;
+        border-color: $green;
+        background: #BCFEEF;
+    }
+}

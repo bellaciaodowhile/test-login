@@ -1,0 +1,90 @@
+.cards__main {
+    display: flex;    
+    gap: 1rem;
+    &-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1rem;
+        flex: 1;
+        border-left: 5px solid;
+        &:nth-child(1) {
+            border-left-color: $card1;
+        }
+        &:nth-child(2) {
+            border-left-color: $card2;
+            img {
+                filter: brightness(0) saturate(100%) invert(68%) sepia(17%) saturate(1588%) hue-rotate(113deg) brightness(93%) contrast(95%);
+            }
+        }
+        &:nth-child(3) {
+            border-left-color: $card3;
+            img {
+                filter: brightness(0) saturate(100%) invert(30%) sepia(71%) saturate(1563%) hue-rotate(211deg) brightness(97%) contrast(88%);
+            }
+        }
+        &:nth-child(4) {
+            border-left-color: $card4;
+            img {
+                filter: brightness(0) saturate(100%) invert(45%) sepia(94%) saturate(328%) hue-rotate(221deg) brightness(100%) contrast(96%);
+            }
+        }
+        .cards__main-content {
+            margin-top: -5px;
+            img {
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 30px;
+                font-weight: 600;
+            }
+        }
+        &:nth-child(1) {
+            .cards__main-content span {
+                color: $card1;
+            }
+        }
+        &:nth-child(2) {
+            .cards__main-content span {
+                color: $card2;
+            }
+        }
+        &:nth-child(3) {
+            .cards__main-content span {
+                color: $card3;
+            }
+        }
+        &:nth-child(4) {
+            .cards__main-content span {
+                color: $card4;
+            }
+        }
+        
+    }
+    &-title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    &-subtitle {
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: -3px;
+        display: block;
+    }
+}
+.main__box {
+    background: white;
+    padding: 1rem;
+    border-radius: 16px;
+    .cards__main {
+        &-card {
+            padding: 1rem 10px;
+            background: #F0F8FB;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &-title {
+            font-size: 17px;
+        }
+    }
+}

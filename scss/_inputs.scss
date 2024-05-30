@@ -92,6 +92,27 @@ input[type=number]::-webkit-outer-spin-button {
             }
         }
     }
+    &--gps {
+        input {
+            padding-right: 146px;
+        }
+        &-btn {
+            border: none;
+            background: #0000;
+            position: absolute;
+            right: 10px;
+            top: 28px;
+            z-index: 2;
+            color: $blue-button;
+            font-weight: 600;
+            img {
+                filter: brightness(0) saturate(100%) invert(26%) sepia(99%) saturate(2625%) hue-rotate(222deg) brightness(99%) contrast(95%);
+            }
+        }
+    }
+    &--full {
+        max-width: 100%;
+    }
 }
 
 .input__text-textarea .input__text-label {
@@ -184,7 +205,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     pointer-events: none;
     left: 20px;
-    top: 29px;
+    top: 27px;
     font-size: .88rem;
     color: $color-input-label;
     transition: all 300ms;

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buskadent | Configuración</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/administrativoPaciente.css">
+    <!-- Material Icons -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav-menu">
+            <img src="images/Logo%20hor.png" class="logo" alt="Logo del menu">
+            <div class="nav-menu-burger">
+                <button class="nav-menu-burger-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 8l16 0"></path>
+                    <path d="M4 16l16 0"></path>
+                </svg>
+            </button>
+            <ul class="nav-menu-mobile">
+               <div class="dropdown__buskadent">
+                <div>
+                    <img src="./images/thumb-profile.png" alt="Profile">
+                    <span>Dr. Ruby Perrin</span>
+                </div>
+                <i class="material-icons-outlined">expand_more</i>
+
+                <div class="dropdown__buskadent-content">
+                    <a href="#">
+                        <img src="./images/dashboardIconOff.svg" alt="Tablero">
+                        <span>Tablero</span>
+                    </a>
+                    <a href="#">
+                        <img src="./images/humans.png" alt="B-Kard">
+                        <span>B-Kard</span>
+                    </a>
+                    <a href="#">
+                        <img src="./images/humans.png" alt="Configuración">
+                        <span>Configuración</span>
+                    </a>
+                    <a href="javascript:void();" class="trigger-modal-simple" id="logout">
+                        <img src="./images/cerrarIconOff.svg" alt="Cerrar sesión">
+                        <span>Cerrar sesión</span>
+                    </a>
+                </div>
+
+            </div>
+        </ul>
+    </div>
+    <div class="nav-menu-container">
+        <ul class="nav-menu-items">
+            <li>
+                <a href="#" class="text-buttons unete d-flex align-items-center justify-content-center no-gap">
+                    <img src="./images/faqs.png" alt="FAQs" class="mx-1">
+                    <span>FAQs</span>
+                </a>
+            </li>
+            <li>
+                <div class="dropdown__buskadent">
+                    <div>
+                        <img src="./images/thumb-profile.png" alt="Profile">
+                        <span>Dr. Ruby Perrin</span>
+                    </div>
+                    <i class="material-icons-outlined">expand_more</i>
+
+                    <div class="dropdown__buskadent-content">
+                        <a href="#">
+                            <img src="./images/dashboardIconOff.svg" alt="Tablero">
+                            <span>Tablero</span>
+                        </a>
+                        <a href="#">
+                            <img src="./images/humans.png" alt="B-Kard">
+                            <span>B-Kard</span>
+                        </a>
+                        <a href="#">
+                            <img src="./images/humans.png" alt="Configuración">
+                            <span>Configuración</span>
+                        </a>
+                        <a href="javascript:void();" class="trigger-modal-simple" id="logout">
+                            <img src="./images/cerrarIconOff.svg" alt="Cerrar sesión">
+                            <span>Cerrar sesión</span>
+                        </a>
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+</header>
+
+<!-- Modal -->
+
+<div class="modal-simple" id="logout">
+
+ <div class="card-modal">
+   <div class="content-modal">
+    <div class="title__section justify-content-center">
+        <span>¿Quieres cerrar sesión?</span>
+    </div>
+    <hr class="content__main-form__sp mb-2">
+    <button class="btn__outlined btn__outlined--fill btn__outlined--full btn__outlined--big mt-3 btn__outlined--blue">
+        Cerrar sesión
+    </button>
+    <button class="btn__outlined btn__outlined--transparent btn__outlined--full close-modal mt-2">
+        Cancelar
+    </button>
+</div>
+</div>
+</div>
+<!-- End Modal -->
+
+
+<div class="hero-titulo hero-title--admin">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><a href="#">Inicio</a></li>
+            <li class="breadcrumb-item active">Dr. Ruby Perrin</li>
+        </ol>
+    </nav>
+    <div class="hero-back">
+        <a href="#">
+            <img class="d-block" src="./images/arrowLeft.svg" alt="Atras" class="c-pointer">
+        </a>
+        <h2 class="d-block">Configuración</h2>
+    </div>
+</div>
+
+<!-- Start Content -->
+<!-- End -->
+<main class="dashboard dashboard--admin">
+    <div class="container--admin">
+        <div class="dashboard__content dashboard__content--full">
+
+            <section class="dashboard__main">
+                <section class="dashboard__content-main">
+
+                    <div class="title__section mt-3">
+                        <span>Datos de seguridad</span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="input__text">
+                          <input class="input__text-input" name="pass" type="password" required autocomplete="off">
+                          <span class="input__text-label">Contraseña</span>
+                          <i class="material-icons-outlined visibility">visibility_off</i>
+                      </div>
+                      <button class="btn__outlined btn__outlined--transparent">
+                        Cambiar contraseña
+                    </button>
+                </div>
+                <hr class="content__main-form__sp mb-2">
+                <div class="title__section mt-3">
+                    <span>Ubicación del profesional</span>
+                </div>
+                <div class="input__text input__text--full input__text--gps">
+                    <input class="input__text-input" name="address" type="text" required autocomplete="off">
+                    <span class="input__text-label">Dirección *</span>
+                    <button type="button" class="input__text--gps-btn">
+                        <img src="./images/gpsme.png" alt="GPSMe">
+                        <span>Ubicar en el mapa</span>
+                    </button>
+                </div>
+                <div class="maps mt-2">
+                    <div class="btns__zoom">
+                        <button class="btns__zoom-btn">+</button>
+                        <button class="btns__zoom-btn">-</button>
+                    </div>
+                    <img src="./images/map.png" alt="Maps" class="map__img">
+                    <button class="gpsme">
+                        <img src="./images/gpsme.png" alt="Según mi ubicación">
+                        <span>Según mi ubicación</span>
+                    </button>
+                </div>
+                <hr class="content__main-form__sp mb-2">
+                <div class="title__section mt-3">
+                    <span>Método de pago</span>
+                </div>
+                <div class="d-flex flex-wrap mt-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="efectivo" checked>
+                      <label class="form-check-label" for="efectivo">
+                        Efectivo
+                    </label>
+                </div>
+                <div class="form-check"> 
+                  <input class="form-check-input" type="checkbox" value="" id="tarcrede" checked>
+                  <label class="form-check-label" for="tarcrede">
+                    Tarjeta de crédito / debito
+                </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="mesinteree" checked>
+              <label class="form-check-label" for="mesinteree">
+                Meses sin interes
+            </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="transfe" checked>
+          <label class="form-check-label" for="transfe">
+            Tranferencias
+        </label>
+    </div>
+</div>
+<hr class="content__main-form__sp mb-2">
+<button class="btn__outlined btn__outlined--fill btn__outlined--big mt-3">
+    Guardar cambios
+</button>
+
+
+</section>
+</section>
+</div>
+</div>
+</main>
+
+
+<!-- End Content -->
+
+<footer class="footer">
+    <div class="footer-botones">
+        <div class="footer-botones-logo">
+            <img src="images/Logo-footer.png" alt="Logo en footer">
+            <p class="footer-botones-texto">
+                Buscamos mejorar la salud bucal de los mexicanos al facilitar el
+                acceso a la atención dental de calidad.
+            </p>
+            <div class="footer-botones-redes">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                        d="M11.7262 8.9995L12.1707 6.104H9.39225V4.225C9.39225 3.433 9.78025 2.6605 11.0247 2.6605H12.2878V0.1955C12.2878 0.1955 11.1417 0 10.0457 0C7.75775 0 6.26225 1.387 6.26225 3.8975V6.1045H3.71875V9H6.26225V16H9.39225V9L11.7262 8.9995Z"
+                        fill="white"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                        d="M8.68051 1.3348C9.167 1.33294 9.65349 1.33783 10.1398 1.34947L10.2692 1.35414C10.4185 1.35947 10.5658 1.36614 10.7438 1.37414C11.4532 1.40747 11.9372 1.51947 12.3618 1.68414C12.8018 1.85347 13.1725 2.0828 13.5432 2.45347C13.8821 2.78654 14.1444 3.18944 14.3118 3.63414C14.4765 4.0588 14.5885 4.54347 14.6218 5.2528C14.6298 5.43014 14.6365 5.57814 14.6418 5.72747L14.6458 5.8568C14.6577 6.34293 14.6628 6.8292 14.6612 7.31547L14.6618 7.8128V8.68614C14.6635 9.17263 14.6584 9.65912 14.6465 10.1455L14.6425 10.2748C14.6372 10.4241 14.6305 10.5715 14.6225 10.7495C14.5892 11.4588 14.4758 11.9428 14.3118 12.3675C14.1449 12.8126 13.8826 13.2159 13.5432 13.5488C13.2098 13.8877 12.8067 14.15 12.3618 14.3175C11.9372 14.4821 11.4532 14.5941 10.7438 14.6275C10.5658 14.6355 10.4185 14.6421 10.2692 14.6475L10.1398 14.6515C9.65349 14.6633 9.167 14.6684 8.68051 14.6668L8.18318 14.6675H7.31051C6.82402 14.6691 6.33753 14.664 5.85118 14.6521L5.72184 14.6481C5.56358 14.6424 5.40536 14.6357 5.24718 14.6281C4.53784 14.5948 4.05384 14.4815 3.62851 14.3175C3.18363 14.1504 2.78067 13.888 2.44784 13.5488C2.10854 13.2157 1.84599 12.8125 1.67851 12.3675C1.51384 11.9428 1.40184 11.4588 1.36851 10.7495C1.36108 10.5913 1.35442 10.4331 1.34851 10.2748L1.34518 10.1455C1.33289 9.65913 1.32733 9.17264 1.32851 8.68614V7.31547C1.32665 6.8292 1.33154 6.34294 1.34318 5.8568L1.34784 5.72747C1.35318 5.57814 1.35984 5.43014 1.36784 5.2528C1.40118 4.5428 1.51318 4.05947 1.67784 3.63414C1.84542 3.18922 2.10849 2.78643 2.44851 2.45414C2.78111 2.11464 3.18382 1.85185 3.62851 1.68414C4.05384 1.51947 4.53718 1.40747 5.24718 1.37414L5.72184 1.35414L5.85118 1.3508C6.3373 1.33852 6.82357 1.33296 7.30984 1.33414L8.68051 1.3348ZM7.99518 4.66814C7.55351 4.66189 7.11501 4.74349 6.70516 4.90818C6.29531 5.07288 5.92227 5.31739 5.60774 5.62751C5.29321 5.93762 5.04344 6.30716 4.87297 6.71465C4.70249 7.12213 4.6147 7.55943 4.6147 8.00114C4.6147 8.44284 4.70249 8.88015 4.87297 9.28763C5.04344 9.69511 5.29321 10.0647 5.60774 10.3748C5.92227 10.6849 6.29531 10.9294 6.70516 11.0941C7.11501 11.2588 7.55351 11.3404 7.99518 11.3341C8.87923 11.3341 9.72708 10.9829 10.3522 10.3578C10.9773 9.73271 11.3285 8.88486 11.3285 8.0008C11.3285 7.11675 10.9773 6.2689 10.3522 5.64378C9.72708 5.01866 8.87923 4.66814 7.99518 4.66814ZM7.99518 6.00147C8.26085 5.99658 8.52483 6.04467 8.77171 6.14294C9.01858 6.24122 9.2434 6.3877 9.43303 6.57383C9.62266 6.75997 9.77329 6.98203 9.87614 7.22703C9.97898 7.47204 10.032 7.73508 10.032 8.0008C10.0321 8.26651 9.97916 8.52958 9.8764 8.77462C9.77363 9.01966 9.62307 9.24176 9.43351 9.42796C9.24394 9.61416 9.01917 9.76072 8.77233 9.85907C8.52548 9.95743 8.26152 10.0056 7.99584 10.0008C7.46541 10.0008 6.9567 9.79009 6.58163 9.41502C6.20656 9.03995 5.99584 8.53124 5.99584 8.0008C5.99584 7.47037 6.20656 6.96166 6.58163 6.58659C6.9567 6.21152 7.46541 6.0008 7.99584 6.0008L7.99518 6.00147ZM11.4952 3.66814C11.2801 3.67675 11.0767 3.76824 10.9276 3.92345C10.7785 4.07867 10.6952 4.28556 10.6952 4.5008C10.6952 4.71605 10.7785 4.92294 10.9276 5.07816C11.0767 5.23337 11.2801 5.32486 11.4952 5.33347C11.7162 5.33347 11.9282 5.24567 12.0844 5.08939C12.2407 4.93311 12.3285 4.72115 12.3285 4.50014C12.3285 4.27912 12.2407 4.06716 12.0844 3.91088C11.9282 3.7546 11.7162 3.6668 11.4952 3.6668V3.66814Z"
+                        fill="white"></path>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                        d="M14.9779 3.99935C14.4646 4.23268 13.9113 4.38602 13.3379 4.45935C13.9246 4.10602 14.3779 3.54602 14.5913 2.87268C14.0379 3.20602 13.4246 3.43935 12.7779 3.57268C12.2512 2.99935 11.5113 2.66602 10.6713 2.66602C9.10458 2.66602 7.82458 3.94602 7.82458 5.52602C7.82458 5.75268 7.85125 5.97268 7.89792 6.17935C5.52458 6.05935 3.41125 4.91935 2.00458 3.19268C1.75792 3.61268 1.61792 4.10602 1.61792 4.62602C1.61792 5.61935 2.11792 6.49935 2.89125 6.99935C2.41792 6.99935 1.97792 6.86602 1.59125 6.66602V6.68602C1.59125 8.07268 2.57792 9.23268 3.88458 9.49268C3.46507 9.60749 3.02465 9.62346 2.59792 9.53935C2.77899 10.1077 3.13361 10.605 3.61193 10.9613C4.09025 11.3176 4.66821 11.5151 5.26458 11.526C4.25367 12.3263 3.00058 12.7589 1.71125 12.7527C1.48458 12.7527 1.25792 12.7393 1.03125 12.7127C2.29792 13.526 3.80458 13.9993 5.41792 13.9993C10.6713 13.9993 13.5579 9.63935 13.5579 5.85935C13.5579 5.73268 13.5579 5.61268 13.5512 5.48602C14.1112 5.08602 14.5912 4.57935 14.9779 3.99935Z"
+                        fill="white"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-botones-paginas">
+            <div class="footer-paginas-col">
+                <h3>Sobre nosotros</h3>
+                <div class="footer-paginas-links">
+                    <a href="#">¿Quiénes somos?</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Preguntas frecuentes</a>
+                </div>
+            </div>
+            <div class="footer-paginas-col">
+                <h3>Odontólogos</h3>
+                <div class="footer-paginas-links">
+                    <a href="#">¿Cómo registrarme?</a>
+                    <a href="#">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="footer-separador border border-1 opacity-50">
+    <div class="footer-terminos">
+        <span class="footer-terminos-copy">Copyright © 2023 Buskadent</span>
+        <div class="footer-terminos-poli">
+            <a href="#">Terminos y Condiciones</a>
+            <div class="separadorVertical"></div>
+            <a href="#">Políticas de privacidad</a>
+        </div>
+    </div>
+</footer>
+
+
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/app.js"></script>
+</body>
+
+</html>

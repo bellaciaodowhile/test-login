@@ -80,6 +80,25 @@
             width: 100%;
         }
     }
+    &--basic {
+        padding: 1rem 0;
+        .alert__buskadent-text {
+            color: $blue-light;
+            display: flex;
+            flex-direction: row;
+            strong {
+                font-weight: 500;
+            }
+            i {
+                color: $blue-light;
+            }
+        }
+        .alert__buskadent--content-item {
+            display: flex;
+            justify-content: flex-start;
+            column-gap: 10px;
+        }
+    }
 
     &-text {
         display: flex;

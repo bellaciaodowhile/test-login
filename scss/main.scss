@@ -3,6 +3,7 @@ $title-section: #293E87;
 $blue-light: #36BFF4;
 $blue-button: #2D5FF7;
 $facebook: #216AD1;
+$blue-tag: #3463F2;
 $google: #9FAAAC;
 $input: #F2F3F4;
 $color-input: #87878A;
@@ -21,6 +22,11 @@ $uploading-bg: #F0F8FB;
 $uploading: #D4EAF2;
 $upload-mini: #3463F2;
 $trs: all 300ms ease-in-out;
+$card1: #E14730;
+$card2: #28CD9F;
+$card3: #435FDD;
+$card4: #A576F0;
+$yellow: #FBC430;
 
 // Animations
 $fadeIn: 300ms fadeIn ease-in-out forwards;
@@ -46,6 +52,12 @@ $hideFadeLeft: 300ms hideFadeLeft ease-in-out forwards;
 @import 'upload';
 @import 'form_steps';
 @import 'dashboard';
+@import 'tags';
+@import 'admin';
+@import 'cards';
+@import 'tabs';
+@import 'maps';
+@import 'modal';
 @import 'nav';
 @import 'medias';
 

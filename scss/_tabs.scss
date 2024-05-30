@@ -1,0 +1,59 @@
+.tabs__buskadent {
+    &-head {
+        position: relative;
+        display: flex;
+        overflow-x: auto;
+         &::-webkit-scrollbar-track,
+        .content::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #eee;
+            border-radius: 4px;
+            border: 0px solid #ffffff;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 7px;
+        }
+        .tabs__buskadent-tab {
+            cursor: pointer;
+            padding: 5px 7px;
+            transition: $trs;
+            text-align: center;
+            text-wrap: nowrap;
+            &--active { 
+                color: $blue-button;
+                font-weight: 700;
+            }
+        }
+        .tabs__buskadent-marked {
+            position: absolute;
+            height: 2px;
+            background: $yellow;
+            bottom: 0;
+            left: 0;
+            transition: $trs;
+        }
+        &--full {
+            display: flex;
+            flex: 1;
+            .tabs__buskadent-tab {
+                flex-grow: 1;
+            }
+        }
+    }
+    &-body {
+        width: 100%;
+        .tabs__buskadent-tab {
+            overflow: auto;
+            display: none;
+            &--active {
+                display: block;
+                animation: $fadeInLeft;
+            }
+        }
+    }
+}

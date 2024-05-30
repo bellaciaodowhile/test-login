@@ -1,0 +1,34 @@
+
+.modal-simple {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: #00000050;
+  overflow: auto;
+  padding: 4em 2em;
+  animation: var(--fadeIn);
+}
+.modal-simple .card-modal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: auto;
+  text-align: right;
+  animation: $fadeInDown;
+}
+.modal-simple .card-modal .content-modal {
+  padding: 41px;
+  min-width: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 1px 6px 15px #00000026;
+}
+.modal-simple .card-modal .content-modal .close-modal {
+  cursor: pointer;
+}

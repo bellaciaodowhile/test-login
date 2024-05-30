@@ -117,8 +117,8 @@ a {
 }
 /* appearance for checked radiobutton */
 .form-check-input:checked {
-  background-color: #12b28c !important;
-  border-color: #12b28c !important;
+  background-color: #28CD9F !important;
+  border-color: #28CD9F !important;
 }
 /*Accordion icons*/
 /*Accordion abierto*/
@@ -537,11 +537,13 @@ header {
   text-align: center;
   width: 100%;
   color: white;
+  font-size: 25px;
 }
 /* breadcrumb */
 .breadcrumb-item {
   & a {
     color: white;
+    font-weight: 200;
   }
   &.active {
     color: #22bff6 !important;
