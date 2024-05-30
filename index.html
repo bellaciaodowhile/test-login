@@ -63,7 +63,6 @@
 			max-height: 640px;
 			padding: 8rem 6rem;
 			display: flex;
-			align-items: center;
 			background: rgba(255, 255, 255, 0.375);
 			box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
 			border-radius: 2rem;
@@ -184,6 +183,14 @@
 				margin-bottom: 2.5rem;
 			}
 		}
+		.links {
+			display: flex;
+			padding-left: 3rem;
+			flex-direction: column;
+			align-items: flex-start;
+			font-size: 1.5rem;
+			margin-bottom: 3rem;
+		}
 
 		@media only screen and (max-width: 600px) {
 			.overlay {
@@ -203,14 +210,24 @@
 			.overlay__btn:first-child {
 				margin-bottom: 1rem;
 			}
+			.links {
+				padding-left: 0rem;
+			}
+			.links ul li{
+				list-style: none;
+			}
 		}
 		.links {
-			display: flex;
-			padding-left: 3rem;
-			flex-direction: column;
-			align-items: flex-start;
-			font-size: 1.5rem;
-			margin-bottom: 3rem;
+			list-style: none;
+		}
+		
+		.links a {
+			font-size: 1rem;
+
+		}
+		a[disabled] {
+			filter: blur(3px);
+			cursor: initial;
 		}
 	</style>
 </head>
@@ -231,19 +248,22 @@
 			</p>
 			<ul class="links">
 				<li>
-					<a href="#" target="_blank">Buskadent - Perfil Administrativo 1</a>
+					<a href="https://codezardi-temporary.vercel.app/perfil-administrativo-1.html" target="_blank">> Perfil Administrativo 1</a>
 				</li>
 				<li>
-					<a href="#" target="_blank">Buskadent - Perfil Administrativo 2</a>
+					<a href="https://codezardi-temporary.vercel.app/perfil-administrativo-2.html" target="_blank">>  Perfil Administrativo 2</a>
 				</li>
 				<li>
-					<a href="#" target="_blank">Buskadent - Perfil Administrativo 3</a>
+					<a href="https://codezardi-temporary.vercel.app/perfil-administrativo-3.html" target="_blank">>  Perfil Administrativo 3</a>
 				</li>
 				<li>
-					<a href="#" target="_blank">Buskadent - Perfil Administrativo 4</a>
+					<a href="https://codezardi-temporary.vercel.app/perfil-administrativo-4.html" target="_blank">>  Perfil Administrativo 4</a>
 				</li>
 				<li>
-					<a href="#" target="_blank">Buskadent - Perfil Administrativo 5</a>
+					<a href="https://codezardi-temporary.vercel.app/perfil-administrativo-5.html" target="_blank">>  Perfil Administrativo 5</a>
+				</li>
+				<li>
+					<a disabled href="javascript:void();">> Perfil Administrativo 6</a>
 				</li>
 
 			</ul>
@@ -251,13 +271,13 @@
 			<div class="overlay__btns">
 
 				<button class="overlay__btn overlay__btn--transparent">
-					<a href="https://georgefrancis.dev/writing/create-a-generative-landing-page-and-webgl-powered-background/" target="_blank">
-						View Tutorial
+					<a href="https://codezardi.vercel.app/" target="_blank">
+						Maquetado por&nbsp;<strong>Codezardi</strong>
 					</a>
 				</button>
 
 				<button class="overlay__btn overlay__btn--colors">
-					<span>Randomise Colors</span>
+					<span>Cambiar fondo</span>
 					<span class="overlay__btn-emoji">🎨</span>
 				</button>
 			</div>
