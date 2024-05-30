@@ -1446,19 +1446,20 @@ main.login footer a {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: auto;
 }
 .dashboard--admin .dashboard__content-sidebar__profile .profile__name {
   text-wrap: nowrap;
 }
 .dashboard--admin .dashboard__content {
-  grid-template-columns: 350px 1fr;
+  grid-template-columns: 300px 1fr;
 }
 .dashboard--admin .dashboard__content--full {
   grid-template-columns: 1fr;
 }
 .dashboard--admin .dashboard__content-sidebar {
-  width: 350px;
-  max-width: 350px;
+  width: 300px;
+  max-width: 300px;
   height: fit-content;
 }
 
@@ -1968,7 +1969,8 @@ main.login footer a {
 
 .modal-simple .card-modal .content-modal {
   padding: 41px;
-  min-width: 500px;
+  width: 100%;
+  max-width: 500px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.1490196078);
@@ -1978,20 +1980,24 @@ main.login footer a {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1400px) {
-  .dashboard--admin .dashboard__content {
-    gap: 1.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .dashboard--admin .dashboard__content-sidebar {
-    width: auto;
-    max-width: 100%;
-  }
-  .dashboard--admin .dashboard__content-sidebar .tooltip__buskadent::after {
-    display: block;
-  }
-}
+/* @media only screen and (max-width: 1400px) {
+    .dashboard--admin {
+        .dashboard__content {
+            gap: 1.5rem;
+            display: flex;
+            flex-direction: column;
+
+            &-sidebar {
+                .tooltip__buskadent::after {
+                    display: block;
+                }
+
+                width: auto;
+                max-width: 100%;
+            }
+        }
+    }
+} */
 @media only screen and (max-width: 1210px) {
   .dashboard .dashboard__content, .dashboard--admin .dashboard__content {
     gap: 1.5rem;
