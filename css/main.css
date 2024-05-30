@@ -1440,6 +1440,9 @@ span.items__selected {
   z-index: 2;
   left: 0;
 }
+.content__main-buttons__fixed--admin {
+  position: relative;
+}
 .content__main-buttons__fixed button {
   border: none;
   padding: 10px 15px;
