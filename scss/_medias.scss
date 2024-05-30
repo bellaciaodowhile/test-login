@@ -109,6 +109,9 @@
             width: 100px;
         }
     }
+    .flex__checkbox {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media only screen and (max-width: 640px) {
@@ -163,6 +166,9 @@
         width: 100%;
         max-width: 100%;
         right: 0;
+    }
+    .flex__checkbox {
+        grid-template-columns: 1fr;
     }
 }
 

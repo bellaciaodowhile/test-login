@@ -721,5 +721,116 @@ modalSimple.map((el, i) => {
     close.onclick = (e) => {
         el.style.display = 'none'
     }
+});
 
-})
+// Search Real Time
+const data = [
+    {
+       0: ['Ortodoncista', 'Periodoncista', 'Maxilofacial', 'Endodoncista', 'Odontopediatra', 'Cirujano Oral y Maxilofacial', 'Prostodoncista', 'Odontólogo Cosmético', 'Odontólogo de Salud Pública']
+    },
+    {
+       0: ['Caries dental', 'Gingivitis', 'Periodontitis', 'Maloclusión', 'Halitosis (mal aliento)', 'Erosión dental', 'Abscesos dentales', 'Sensibilidad dental', 'Bruxismo', 'Pérdida de esmalte dental', 'Lesiones en la mucosa oral']
+    },
+    {
+       0: ['Limpieza Dental', 'Tratamientos de conducto (endodoncia)', 'Extracciones dentales', 'Blanqueamiento dental', 'Odontopediatra', 'Coronas dentales']
+    },
+
+];
+const searchRealTimeSpecial = document.querySelector('#special');
+const searchRealTimeSpecialCenter = document.querySelector('#special__center');
+const searchRealTimeSick = document.querySelector('#sick');
+const searchRealTimeTreatments = document.querySelector('#treatments');
+
+realTime(searchRealTimeSpecial, data[0][0], '#items__selected__special');
+realTime(searchRealTimeSpecialCenter, data[0][0], '#items__selected__special__center');
+realTime(searchRealTimeSick, data[1][0], '#items__selected__sick');
+realTime(searchRealTimeTreatments, data[2][0], '#items__selected__treatments');
+
+
+function normalize(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+/* @params 
+ search: Element,
+ data: Array,
+ count: Element 
+*/
+function realTime(search, data, id) {
+    let selected = document.querySelector(id);
+    let input = search.querySelector('input');
+    let resultContainer = search.querySelector('.input__search-content');
+    let selectedItems = [];
+    let tagsContainer = search.nextElementSibling;
+    
+    input.oninput = (e) => {
+        let current = normalize(e.currentTarget.value.trim().toLowerCase());
+        let filteredData = data.filter(item => normalize(item).toLowerCase().includes(current));
+        resultContainer.style.display = 'block';
+        resultContainer.innerHTML = '';
+
+        if (filteredData.length > 0) {
+             filteredData.forEach(item => {
+                let itemElement = document.createElement('div');
+                itemElement.classList.add('input__search-content-item', 'input__search-content-item--yes');
+                itemElement.textContent = item;
+                resultContainer.appendChild(itemElement);
+
+                itemElement.addEventListener('click', () => {
+                    selectedItems.push(item);
+                    updateTagsDisplay();
+                });
+            });
+         } else {
+            let itemElement = document.createElement('div');
+            itemElement.classList.add('input__search-content-item');
+            itemElement.textContent = 'No se encuentran resultados...';
+            resultContainer.appendChild(itemElement);
+         }
+
+         function updateTagsDisplay() {
+            // Clear the existing tags display
+            tagsContainer.innerHTML = '';
+
+            // Loop through the selected items array and create a tag element for each item
+            selectedItems.forEach(selectedItem => {
+                let tagElement = document.createElement('div');
+                let spanElement = document.createElement('span');
+                let iElement = document.createElement('i');
+
+                tagElement.classList.add('tags__container-tag');
+                iElement.classList.add('material-icons-outlined');
+                iElement.textContent = 'close';
+                spanElement.textContent = selectedItem
+
+                tagElement.appendChild(spanElement);
+                tagElement.appendChild(iElement);
+                tagsContainer.appendChild(tagElement);
+
+                iElement.onclick = (e) => {
+                    tagElement.remove();
+                    selectedItems.pop();
+                    countSelected();
+                }
+            });
+            countSelected();
+            
+        }
+        function countSelected() {
+            if (selectedItems.length > 0) {
+                selected.textContent = `${selectedItems.length} seleccionados`;
+            } else {
+                 selected.textContent = ``;
+            }
+        }
+    } 
+
+    document.addEventListener('click', function(event) {
+        const content = search.querySelector('.input__search-content');
+        if (!content.contains(event.target)) {
+            content.style.display = 'none';
+        }
+    });
+}
+
+

@@ -333,7 +333,7 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 80%;
 }
 .input__text--select .input__text-input {
-  padding-right: 4rem;
+  padding-right: 2rem;
   cursor: pointer;
   caret-color: rgba(0, 0, 0, 0);
 }
@@ -391,6 +391,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .input__text--gps input {
   padding-right: 146px;
+  font-weight: 600;
 }
 .input__text--gps-btn {
   border: none;
@@ -407,6 +408,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .input__text--full {
   max-width: 100%;
+}
+.input__text--time {
+  margin-top: -8px;
+}
+.input__text--time input {
+  padding: 0 2rem 0 2.5rem;
+  font-weight: 600;
+}
+.input__text--time .icon-time {
+  position: absolute;
+  left: 10px;
+  top: 24px;
 }
 
 .input__text-textarea .input__text-label {
@@ -544,6 +557,66 @@ input[type=number]::-webkit-outer-spin-button {
   left: 8px;
   font-size: 1.2rem;
   color: #79797C;
+}
+.input__search--real-time {
+  position: relative;
+}
+.input__search--real-time input {
+  font-size: 0.875rem;
+  padding: 0px 16px;
+  height: 55px;
+  width: 300px;
+  max-width: 300px;
+  padding-left: 2rem;
+}
+.input__search--real-time i {
+  top: 17px;
+  font-size: 1.2rem;
+}
+.input__search--real-time .input__search-content {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  animation: 300ms fadeInDown ease-in-out forwards;
+  background: #fff;
+  max-height: 200px;
+  overflow: auto;
+  display: none;
+  z-index: 1;
+}
+.input__search--real-time .input__search-content::-webkit-scrollbar-track {
+  background: #fff;
+}
+.input__search--real-time .input__search-content::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 4px;
+  border: 0px solid #ffffff;
+}
+.input__search--real-time .input__search-content::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+}
+.input__search--real-time .input__search-content-item {
+  padding: 10px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+.input__search--real-time .input__search-content-item:nth-child(1) {
+  border-radius: 16px 16px 0 0;
+}
+.input__search--real-time .input__search-content-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 16px 16px;
+}
+.input__search--real-time .input__search-content-item:hover {
+  background: rgba(0, 0, 0, 0.1490196078);
+  font-weight: 600;
 }
 
 main.login {
@@ -899,7 +972,7 @@ main.login footer a {
 .title__section span {
   display: block;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #293E87;
 }
 
@@ -1048,6 +1121,55 @@ main.login footer a {
 
 .gap-10 {
   gap: 10px;
+}
+
+.gap-main {
+  gap: 1.5rem;
+}
+
+.form-switch input[type=checkbox] {
+  border-radius: 100px;
+}
+.form-switch .form-check-input {
+  width: 3em;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.tags__container {
+  margin-top: 1rem;
+  gap: 10px;
+}
+.tags__container-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 7px;
+  background: #F0F8FB;
+  border-radius: 100px;
+  font-size: 0.875rem;
+}
+.tags__container-tag i {
+  color: #293E87;
+  cursor: pointer;
+}
+
+span.items__selected {
+  font-size: 0.8rem;
+  color: #181616;
+  font-weight: 400;
+}
+
+.flex__checkbox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.color-text {
+  color: #181616 !important;
 }
 
 .upload {
@@ -1316,6 +1438,7 @@ main.login footer a {
   padding: 1rem 3rem;
   box-shadow: 0 -6px 26px rgba(0, 0, 0, 0.1490196078);
   z-index: 2;
+  left: 0;
 }
 .content__main-buttons__fixed button {
   border: none;
@@ -1385,7 +1508,7 @@ main.login footer a {
   min-width: 300px;
   border-radius: 16px;
   background: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 .dashboard__content-sidebar .tooltip__buskadent::after {
   display: none;
@@ -2077,6 +2200,9 @@ main.login footer a {
   .upload__info img {
     width: 100px;
   }
+  .flex__checkbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media only screen and (max-width: 640px) {
   .flex-between {
@@ -2121,6 +2247,9 @@ main.login footer a {
     width: 100%;
     max-width: 100%;
     right: 0;
+  }
+  .flex__checkbox {
+    grid-template-columns: 1fr;
   }
 }
 @media only screen and (max-width: 375px) {

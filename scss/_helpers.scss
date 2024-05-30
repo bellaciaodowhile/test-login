@@ -133,7 +133,7 @@
     span {
         display: block;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: $title-section;
     }
 }
@@ -269,4 +269,48 @@
 }
 .gap-10 {
     gap: 10px;
+}
+.gap-main {
+    gap: 1.5rem;
+}
+.form-switch {
+    input[type=checkbox] {
+        border-radius: 100px;
+    }
+    .form-check-input {
+        width: 3em;
+    }
+}
+.strikethrough {
+    text-decoration: line-through;
+}
+.tags__container {
+    margin-top: 1rem;
+    gap: 10px;
+    &-tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        padding: 5px 7px;  
+        background: $uploading-bg;
+        border-radius: 100px;
+        font-size: 0.875rem;
+        i {
+            color: $title-section;
+            cursor: pointer;
+        }
+    }
+}
+span.items__selected {
+    font-size: .8rem;
+    color: $color-text-radio;
+    font-weight: 400;
+}
+.flex__checkbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.color-text {
+    color: $color-text-radio !important;
 }
