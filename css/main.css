@@ -2130,6 +2130,15 @@ main.login footer a {
   .content__main-form {
     padding: 0.8rem;
   }
+  .all__notes__evolution {
+    text-wrap: wrap;
+  }
+  .all__notes__evolution strong {
+    font-size: 0.7rem;
+  }
+  .all__notes__evolution i {
+    font-size: 0.7rem;
+  }
 }
 button {
   font-size: 0.75rem;

@@ -174,4 +174,13 @@
     .content__main-form {
         padding: .8rem;
     }
+    .all__notes__evolution {
+        text-wrap: wrap;
+        strong {
+            font-size: .7rem;
+        }
+        i {
+            font-size: .7rem;
+        }
+    }
 }
