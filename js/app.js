@@ -762,7 +762,7 @@ function realTime(search, data, id) {
     let resultContainer = search.querySelector('.input__search-content');
     let selectedItems = [];
     let tagsContainer = search.nextElementSibling;
-    
+
     input.oninput = (e) => {
         let current = normalize(e.currentTarget.value.trim().toLowerCase());
         let filteredData = data.filter(item => normalize(item).toLowerCase().includes(current));
@@ -834,3 +834,54 @@ function realTime(search, data, id) {
 }
 
 
+function selectsSocials() {
+    const selectIcons = [...document.querySelectorAll('.select__icons')];
+    selectIcons.map(select => {
+        const trigger = select.querySelector('.select__icons-trigger');
+        const content = select.querySelector('.select__icons-content');
+        const current = select.querySelector('.select__icons--current');
+        const contentItems = [...select.querySelectorAll('img')];
+
+        trigger.onclick = (e) => {
+            e.preventDefault();
+            if (select.classList.contains('select__icons--active')) {
+                select.classList.remove('select__icons--active');
+            } else {
+                select.classList.add('select__icons--active');
+            }
+        }
+        contentItems.map(item => {
+            item.onclick = function(e) {
+                e.preventDefault();
+                current.src = item.src;
+            }
+        });
+
+    });
+}
+selectsSocials();   
+
+const addSocialBtn = document.querySelector('.add__social');
+addSocialBtn.onclick = (e) => {
+    e.preventDefault();
+    const socialsContainer = document.querySelector('.socials__more')
+    const item = document.createElement('div');
+    const content = `<div class="select__icons">
+                            <div class="d-flex align-items-center justify-content-center gap-0 select__icons-trigger">
+                                <img src="./images/face.png" class="select__icons--current" alt="Facebook">
+                                <i class="material-icons-outlined">expand_more</i>
+                            </div>
+                            <div class="select__icons-content">
+                                <img src="./images/insta.png" class="select__icons--current" alt="Instagram">
+                                <img src="./images/face.png" class="select__icons--current" alt="Facebook">
+                            </div>
+                        </div>
+                        <div class="input__text input__text--link">
+                            <input class="input__text-input py-0" name="activity" type="text" required autocomplete="off" placeholder="/link">
+                        </div>`;
+
+    item.classList.add('d-flex', 'gap-10');
+    item.innerHTML = content;
+    socialsContainer.appendChild(item);
+    selectsSocials();
+}

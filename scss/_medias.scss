@@ -160,7 +160,6 @@
             width: 100%;
         }
     }
-
     .alert__buskadent {
         top: 0;
         width: 100%;
@@ -169,6 +168,13 @@
     }
     .flex__checkbox {
         grid-template-columns: 1fr;
+    }
+    .upload__profile {
+        margin-top: 1rem !important;
+        flex-direction: column;
+    }
+    .breadcrumb {
+        flex-direction: column;
     }
 }
 

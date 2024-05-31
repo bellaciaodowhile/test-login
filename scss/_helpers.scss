@@ -314,3 +314,48 @@ span.items__selected {
 .color-text {
     color: $color-text-radio !important;
 }
+.select__icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    cursor: pointer;
+    img {
+        max-width: 100%;
+        transition: $trs;
+        &:hover {
+            transform: scale(0.8);
+        }
+    }
+    &--active {
+        .select__icons-content {
+            display: flex;
+        }
+        .select__icons-trigger {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &-content {
+        display: none;
+        animation: $fadeInDown;
+        position: absolute;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 3;
+        top: 53px;
+        left: 0;
+        background: #fff;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &-trigger i {
+        transition: $trs;
+    }
+    
+}
