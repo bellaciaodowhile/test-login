@@ -2274,6 +2274,10 @@ span.items__selected {
   .cards__main-card {
     flex: 1 0 100%;
   }
+  .input__search--real-time input {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 520px) {
   .content__main-buttons__fixed {
